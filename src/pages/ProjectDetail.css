@@ -38,7 +38,7 @@
   font-size: 2.5rem;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
-      margin-top: 80px;
+  margin-top: 80px;
 }
 
 .project-period {
@@ -95,6 +95,331 @@ section h2 {
   padding-bottom: 0.5rem;
 }
 
+section h3 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+section h4 {
+  color: #1a1a1a;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* 프로젝트 개요 스타일 */
+.project-overview {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.overview-item {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.overview-item strong {
+  color: #1a1a1a;
+  margin-right: 0.5rem;
+}
+
+.overview-item a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.overview-item a:hover {
+  text-decoration: underline;
+}
+
+/* 프로젝트 데모 스타일 */
+.project-demo {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.video-container {
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 프로젝트 구성 및 설계 스타일 */
+.project-structure-design {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.site-map, .database-erd {
+  margin-bottom: 2rem;
+}
+
+.flow-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flow-image, .erd-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.flow-image:hover, .erd-image:hover {
+  transform: scale(1.02);
+}
+
+.erd-features {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.erd-features li {
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #ffd700;
+  line-height: 1.5;
+}
+
+/* 기술 사용처 스타일 */
+.technology-usage {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.usage-category {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  border-left: 4px solid #ffd700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.usage-category h3 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.usage-category p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/* 핵심 기술 특징 스타일 */
+.key-technical-features {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.technical-feature {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  border-left: 4px solid #ffd700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.technical-feature h3 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.technical-feature p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.feature-image {
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.feature-image:hover {
+  transform: scale(1.02);
+}
+
+/* 주요 기능 스타일 */
+.main-features {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.feature-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-section h3 {
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 0.5rem;
+}
+
+.feature-description {
+  font-style: italic;
+  color: #666666;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-left: 4px solid #ffd700;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.6;
+}
+
+.feature-details {
+  margin-top: 1.5rem;
+}
+
+.feature-details h4 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.sub-feature {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #ffd700;
+}
+
+.sub-feature h4 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.feature-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.feature-section li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e9ecef;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.feature-section li:before {
+  content: "▶ ";
+  color: #ffd700;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.feature-section li:last-child {
+  border-bottom: none;
+}
+
+/* 트러블슈팅 스타일 */
+.troubleshooting-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.troubleshooting-content {
+  padding: 1rem;
+}
+
+.troubleshooting-problem,
+.troubleshooting-solution,
+.troubleshooting-result {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  border-left: 4px solid #ffd700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.troubleshooting-problem h4,
+.troubleshooting-solution h4,
+.troubleshooting-result h4 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.cases-description {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.cases-description ol {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.cases-description li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  font-family: monospace;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border-left: 3px solid #ffd700;
+}
+
+.troubleshooting-images {
+  margin: 1.5rem 0;
+}
+
+.troubleshooting-image {
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.troubleshooting-image:hover {
+  transform: scale(1.02);
+}
+
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -124,9 +449,9 @@ section h2 {
 
 .images-grid img {
   width: 100%;
-  height: auto; /* 원본 비율 유지 */
+  height: auto;
   max-width: 800px;
-  object-fit: contain; /* 이미지 전체가 보이도록 */
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
@@ -371,111 +696,6 @@ section h2 {
   box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
 }
 
-/* 프로젝트 구조 스타일 */
-.project-structure {
-  background: #f8f9fa;
-}
-
-.structure-folder {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.structure-folder h4 {
-  color: #1a1a1a;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #ffd700;
-}
-
-.structure-contents {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.structure-contents li {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #e9ecef;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.structure-contents li:last-child {
-  border-bottom: none;
-}
-
-.structure-contents li strong {
-  color: #ffd700;
-  font-weight: 600;
-}
-
-/* 프로젝트 목표 스타일 */
-.project-goals {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-}
-
-.goals-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.goals-list li {
-  padding: 1.5rem;
-  background: white;
-  border-radius: 8px;
-  border-left: 4px solid #ffd700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  transition: transform 0.3s ease;
-}
-
-.goals-list li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
-}
-
-/* 외부 링크 스타일 */
-.external-links {
-  background: #f8f9fa;
-}
-
-.links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.link-item {
-  display: block;
-  padding: 1.2rem;
-  background: white;
-  border-radius: 8px;
-  border-left: 4px solid #ffd700;
-  text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 600;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.link-item:hover {
-  background: #ffd700;
-  color: #1a1a1a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-}
-
 .project-video video {
   width: 100%;
   max-width: 800px;
@@ -516,5 +736,21 @@ section h2 {
   
   .images-grid img {
     max-width: 100%;
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .feature-section {
+    padding: 1.5rem;
+  }
+  
+  .technical-feature,
+  .usage-category,
+  .troubleshooting-problem,
+  .troubleshooting-solution,
+  .troubleshooting-result {
+    padding: 1rem;
   }
 }
