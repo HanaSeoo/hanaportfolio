@@ -1,0 +1,519 @@
+/* ProjectDetail.css */
+.project-detail {
+  min-height: 100vh;
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #ffd700;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #e6c200;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #ffd700;
+}
+
+.project-header h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.project-period {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+/* 프로젝트 액션 버튼 */
+.project-actions {
+  margin-top: 2rem;
+}
+
+.notion-link-btn {
+  display: inline-block;
+  background-color: #ffd700;
+  color: #1a1a1a;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.notion-link-btn:hover {
+  background-color: #ffed4e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+section {
+  margin-bottom: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 0.5rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background-color: #ffd700;
+  color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 프로젝트 이미지 스타일 */
+.project-images {
+  margin: 1.5rem 0;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.images-grid img {
+  width: 100%;
+  height: auto; /* 원본 비율 유지 */
+  max-width: 800px;
+  object-fit: contain; /* 이미지 전체가 보이도록 */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+}
+
+.images-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* 이미지 모달 스타일 */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  cursor: default;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 30px;
+  color: #ffd700;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 215, 0, 0.2);
+}
+
+.project-background ul,
+.project-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-background li,
+.project-features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.project-background li:before,
+.project-features li:before {
+  content: "▶ ";
+  color: #ffd700;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* 프로젝트 구조 스타일 */
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.architecture-item {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #ffd700;
+}
+
+.architecture-item strong {
+  color: #1a1a1a;
+}
+
+/* 팀 멤버 스타일 */
+.team-members {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.member {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.member-name {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.member-role {
+  color: #666666;
+}
+
+.portfolio-link {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.portfolio-link:hover {
+  text-decoration: underline;
+}
+
+.challenges-outcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.challenges,
+.outcome {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid #ffd700;
+}
+
+.challenges h2,
+.outcome h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  border: none;
+  padding: 0;
+  color: #1a1a1a;
+}
+
+.challenges p,
+.outcome p {
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+/* 기술 스택 상세 스타일 */
+.tech-stack-detail {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.tech-category {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  border-left: 4px solid #ffd700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tech-category h3 {
+  color: #1a1a1a;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.tech-list li {
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #ffd700;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* API 섹션 스타일 */
+.apis-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.api-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.api-list li {
+  padding: 1.2rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: transform 0.3s ease;
+}
+
+.api-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+/* 프로젝트 구조 스타일 */
+.project-structure {
+  background: #f8f9fa;
+}
+
+.structure-folder {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.structure-folder h4 {
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ffd700;
+}
+
+.structure-contents {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.structure-contents li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.structure-contents li:last-child {
+  border-bottom: none;
+}
+
+.structure-contents li strong {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+/* 프로젝트 목표 스타일 */
+.project-goals {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.goals-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.goals-list li {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: transform 0.3s ease;
+}
+
+.goals-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+/* 외부 링크 스타일 */
+.external-links {
+  background: #f8f9fa;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.link-item {
+  display: block;
+  padding: 1.2rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.link-item:hover {
+  background: #ffd700;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.project-video video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .project-header h1 {
+    font-size: 2rem;
+  }
+  
+  .challenges-outcome {
+    grid-template-columns: 1fr;
+  }
+  
+  .architecture-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .members-list {
+    flex-direction: column;
+  }
+  
+  .member {
+    min-width: auto;
+  }
+  
+  .images-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .images-grid img {
+    max-width: 100%;
+  }
+}
