@@ -145,7 +145,7 @@ function Hero() {
       {/* 오른쪽 플로팅 소셜 링크 */}
       <div className="social-links">
         <a 
-          href="https://github.com/seohana" 
+          href="https://684632e5774a71af92b2feae--hana-dev-portfolio.netlify.app/" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="social-link github"
@@ -153,7 +153,7 @@ function Hero() {
           <div className="social-icon"></div>
         </a>
         <a 
-          href="https://www.notion.so/hana-portfolio" 
+          href="https://www.notion.so/1b9db822a28e801eb04af2f96ab48d5a" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="social-link notion"
@@ -161,7 +161,7 @@ function Hero() {
           <div className="social-icon"></div>
         </a>
         <a 
-          href="https://velog.io/@seohana" 
+          href="https://velog.io/@gkskquf109/posts" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="social-link velog"
