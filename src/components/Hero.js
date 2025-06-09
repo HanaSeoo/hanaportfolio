@@ -145,7 +145,7 @@ function Hero() {
       {/* 오른쪽 플로팅 소셜 링크 */}
       <div className="social-links">
         <a 
-          href="https://684632e5774a71af92b2feae--hana-dev-portfolio.netlify.app/" 
+          href="https://github.com/HanaSeoo" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="social-link github"
