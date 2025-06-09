@@ -3,7 +3,7 @@ export const projects = {
   1: {
     title: "모갔슈? - 탈모인 익명 공감 커뮤니티",
     period: "2025.05.12 ~ 06.20",
-    notionLink: "https://www.notion.so/프로젝트1-링크-여기에-추가",
+    notionLink: "https://www.notion.so/Project-20ddb822a28e80ef92dfd65b470d78e9",
     description: "모갔슈(毛털모 + 갔슈?_전라도 사투리)는 탈모인들을 위한 익명 기반 공감 커뮤니티 앱으로, AI 기반 이미지 분석을 통해 탈모 상태를 진단하고 맞춤형 정보를 제공하며, 유쾌한 위로와 소통이 가능한 웹+앱 통합 서비스입니다.",
     skills: [
       "Spring Boot", "Java", "JPA", "MySQL", "Spring Security", "HTML", "CSS", 
@@ -11,7 +11,7 @@ export const projects = {
       "AWS EC2", "GitHub Actions", "Git", "Gradle", "STS4", "DBeaver"
     ],
     videoUrl: null,
-    thumbnail: "/image/projectimage/mogetshooLogo.png",
+    thumbnail: "/image/mogatshoo.png",
     images: [
       "/image/projectimage/3_1.png",
       "/image/projectimage/3_2.png", 
@@ -24,7 +24,7 @@ export const projects = {
       developmentPeriod: "2025.05.12 ~ 2025.06.20",
       developmentTeam: 3,
       projectType: "웹+앱 통합 커뮤니티 서비스 (익명 기반 탈모 진단 및 공감 플랫폼)",
-      gitRepository: "https://github.com/Mogatshoo/project",
+      gitRepository: "https://github.com/taejong12/mogatshoo",
       nameOrigin: "모갔슈 = 毛(털모) + 갔슈?('가다'의 전라도 사투리)"
     },
     projectGoals: [

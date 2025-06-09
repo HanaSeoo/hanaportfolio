@@ -12,13 +12,13 @@ function Projects() {
           <Link to="/project/1" className="project-card">
             <div className="project-image">
               {projects[1]?.thumbnail ? (
-                <img src={projects[1].thumbnail} alt="핀테크 프로젝트" />
+                <img src={projects[1].thumbnail} alt="탈모인 프로젝트" />
               ) : (
                 <div className="placeholder-project-image">이미지 준비중</div>
               )}
             </div>
             <div className="project-info">
-              <h3>탈모진단 웹 프로젝트</h3>
+              <h3>탈모인들을 위한한 웹 프로젝트</h3>
               <p>딥러닝과 풀스택 개발을 경험한 최종 프로젝트</p>
               <div className="project-tags">
                 <span className="tag">React</span>
