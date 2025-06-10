@@ -13,7 +13,7 @@ function Hero() {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = '/myprofile/SeoHanaProfile.pdf';
     link.download = '서하나_이력서.pdf';
     link.click();
   };
