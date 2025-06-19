@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const location = useLocation();
-  
+  const navigate = useNavigate();
+  const handleTreeClick = () => {
+    navigate('/skills');
+  };
   const scrollToSection = (sectionId) => {
     // 현재 홈페이지가 아니면 홈으로 이동 후 스크롤
     if (location.pathname !== '/') {
@@ -28,7 +32,7 @@ function Header() {
         <nav className="navigation">
           <button onClick={() => scrollToSection('home')} className="nav-link">Home</button>
           <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
-          <button onClick={() => scrollToSection('skills')} className="nav-link">Skills</button>
+          <button onClick={handleTreeClick} className="nav-link">Skills</button>
           <button onClick={() => scrollToSection('projects')} className="nav-link">Projects</button>
         </nav>
 

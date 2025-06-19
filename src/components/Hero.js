@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 function Hero() {
+  const navigate = useNavigate();
+  
+  const handleTreeClick = () => {
+    navigate('/skills');
+  };
   const [treeVisible, setTreeVisible] = useState(false);
 
   useEffect(() => {
@@ -294,8 +299,10 @@ function Hero() {
             <div className="tree-image-wrapper" style={{
               opacity: treeVisible ? 1 : 0,
               transform: treeVisible ? 'scale(1)' : 'scale(0.8)',
-              transition: 'all 1s ease-out'
-            }}>
+              transition: 'all 1s ease-out',
+              cursor: 'pointer'
+            }} onClick={handleTreeClick}
+              >
               <img 
                 src="/image/skills-tree.png" 
                 alt="기술 나무" 

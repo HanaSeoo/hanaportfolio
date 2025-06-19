@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Skills() {
+function MySkills() {
+ 
   return (
     <section className="skills-section" id="skills">
       <div className="container">
@@ -122,4 +123,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default MySkills;
