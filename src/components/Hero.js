@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 function Hero() {
-  const [scrollY, setScrollY] = useState(0);
   const [treeVisible, setTreeVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
-      
       // 나무 섹션이 보이면 애니메이션 시작
       const treeSection = document.getElementById('skills-tree');
       if (treeSection) {
