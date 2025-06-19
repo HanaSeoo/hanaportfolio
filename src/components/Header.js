@@ -24,12 +24,44 @@ function Header() {
         <div className="logo">
           <Link to="/" className="logo-text">HANA</Link>
         </div>
+        
         <nav className="navigation">
           <button onClick={() => scrollToSection('home')} className="nav-link">Home</button>
           <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
-          <button onClick={() => scrollToSection('skills')} className="nav-link">Skills</button>  {/* Skills 추가 */}
+          <button onClick={() => scrollToSection('skills')} className="nav-link">Skills</button>
           <button onClick={() => scrollToSection('projects')} className="nav-link">Projects</button>
         </nav>
+
+        {/* 헤더 소셜 링크 */}
+        <div className="header-social-links">
+          <a 
+            href="https://github.com/HanaSeoo" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="header-social-link github"
+            title="GitHub"
+          >
+            <div className="header-social-icon"></div>
+          </a>
+          <a 
+            href="https://www.notion.so/1b9db822a28e801eb04af2f96ab48d5a" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="header-social-link notion"
+            title="Notion"
+          >
+            <div className="header-social-icon"></div>
+          </a>
+          <a 
+            href="https://velog.io/@gkskquf109/posts" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="header-social-link velog"
+            title="Velog"
+          >
+            <div className="header-social-icon"></div>
+          </a>
+        </div>
       </div>
     </header>
   );
