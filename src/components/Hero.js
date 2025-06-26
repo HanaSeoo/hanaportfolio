@@ -288,37 +288,7 @@ function Hero() {
         </div>
       </section>
 
-      {/* Simple Tree Image Section - 나뭇잎 효과 제거 */}
-      <section className="simple-tree-section" id="skills-tree">
-        <div className="container">
-          <h2 className="tree-title">나의 성장 나무</h2>
-          <p className="tree-subtitle">개발을 공부하며 배운 나의 흔적</p>
-          
-          <div className="tree-image-container">
-            {/* 나무 이미지만 */}
-            <div className="tree-image-wrapper" style={{
-              opacity: treeVisible ? 1 : 0,
-              transform: treeVisible ? 'scale(1)' : 'scale(0.8)',
-              transition: 'all 1s ease-out',
-              cursor: 'pointer'
-            }} onClick={handleTreeClick}
-              >
-              <img 
-                src="/image/skills-tree.png" 
-                alt="기술 나무" 
-                className="skills-tree-image"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
-              />
-              <div className="tree-placeholder" style={{display: 'none'}}>
-                🌳 기술 나무 이미지가 로드되지 않았습니다
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </>
   );
 }
