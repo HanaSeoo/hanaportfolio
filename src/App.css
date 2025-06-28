@@ -9,7 +9,7 @@ body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   color: #2d3748;
-  background: linear-gradient(135deg, #fef5e7 0%, #ffffff 100%);
+  background: #ffffff;
   overflow-x: hidden;
 }
 
@@ -184,137 +184,6 @@ body {
   }
 }
 
-
-/* Hero Section - 스토리텔링 중심 */
-.hero {
-  margin-top: 120px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 20%;
-  right: -100px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-}
-
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 300px 300px;
-  gap: 12rem;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-content {
-  animation: slideInLeft 0.8s ease-out;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 215, 0, 0.15);
-  color: #d69e2e;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(255, 215, 0, 0.3);
-}
-
-.hero-title {
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  color: #2d3748;
-  letter-spacing: -0.02em;
-}
-
-.hero-title .emoji {
-  font-size: 1.2em;
-  margin: 0 0.2em;
-}
-
-.highlight {
-  color: #d69e2e;
-  position: relative;
-  display: inline-block;
-}
-
-.highlight::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: rgba(255, 215, 0, 0.3);
-  border-radius: 4px;
-  z-index: -1;
-}
-
-.hero-description {
-  font-size: 1.2rem;
-  color: #4a5568;
-  margin-bottom: 2.5rem;
-  line-height: 1.7;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-
-.btn-primary, .btn-secondary {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #ffd700, #f6ad55);
-  color: #2d3748;
-  border-color: #ffd700;
-  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.9);
-  color: #2d3748;
-  border-color: rgba(255, 215, 0, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 215, 0, 0.1);
-  transform: translateY(-3px);
-}
-
 /* 오른쪽 플로팅 소셜 링크 */
 .social-links {
   position: fixed;
@@ -375,204 +244,10 @@ body {
   transition: filter 0.3s ease;
 }
 
-/* Profile Image */
-.hero-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: slideInRight 0.8s ease-out;
-  position: relative;
-}
+/* Projects Section - 인터랙티브 카드 */
 
-.profile-container {
-  position: relative;
-}
 
-.profile-placeholder {
-  width: 280px;
-  height: 280px;
-  background: linear-gradient(135deg, #ffd700, #f6ad55);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #2d3748;
-  border: 4px solid #ffffff;
-  box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.profile-placeholder:hover {
-  transform: scale(1.05) rotate(2deg);
-  box-shadow: 0 25px 80px rgba(255, 215, 0, 0.4);
-}
-
-.profile-decoration {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  font-size: 2rem;
-  animation: bounce 2s ease-in-out infinite;
-  z-index: 3;
-}
-
-/* Developer Stats Card */
-.dev-stats-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  padding: 2rem;
-  border: 2px solid rgba(255, 215, 0, 0.2);
-  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.15);
-  position: relative;
-  animation: slideInRight 0.8s ease-out 0.3s both;
-}
-
-.dev-stats-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #ffd700, #f6ad55, #ffd700);
-  border-radius: 20px 20px 0 0;
-}
-
-.stats-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid rgba(255, 215, 0, 0.1);
-}
-
-.stats-title {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #2d3748;
-}
-
-.stats-level {
-  background: linear-gradient(135deg, #ffd700, #f6ad55);
-  color: #2d3748;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
-}
-
-.stat-item {
-  margin-bottom: 1.2rem;
-}
-
-.stat-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #4a5568;
-}
-
-.stat-icon {
-  font-size: 1.1rem;
-}
-
-.stat-bar {
-  position: relative;
-  background: rgba(255, 215, 0, 0.1);
-  height: 12px;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.stat-fill {
-  height: 100%;
-  border-radius: 10px;
-  transition: width 2s ease-out;
-  position: relative;
-  overflow: hidden;
-}
-
-.stat-fill:nth-child(1) {
-  background: linear-gradient(90deg, #ff6b6b, #ffd700);
-  animation: fillAnimation 2s ease-out 1s both;
-}
-
-.stat-fill.infinite {
-  background: linear-gradient(90deg, #8b5cf6, #ffd700);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.stat-fill.warm {
-  background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
-  animation: glow 2s ease-in-out infinite;
-}
-
-.stat-fill.growth {
-  background: linear-gradient(90deg, #20c997, #17a085);
-  animation: grow 3s ease-out 2s both;
-}
-
-.stat-value {
-  position: absolute;
-  right: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #2d3748;
-  z-index: 2;
-}
-
-.stats-footer {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 2px solid rgba(255, 215, 0, 0.1);
-}
-
-.current-goal {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  color: #4a5568;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.goal-icon {
-  font-size: 1rem;
-  animation: sparkle 2s ease-in-out infinite;
-}
-
-/* Enhanced Timeline */
-.enhanced-journey-section {
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #ffffff 0%, #fef5e7 100%);
-  position: relative;
-}
-
-.enhanced-journey-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(180deg, transparent 0%, rgba(255, 215, 0, 0.05) 100%);
-}
-
-.journey-title {
+.projects-title {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 800;
@@ -581,8 +256,8 @@ body {
   position: relative;
 }
 
-.journey-title::before {
-  content: '🌱';
+.projects-title::before {
+  content: '💻';
   position: absolute;
   left: -3rem;
   top: 50%;
@@ -590,589 +265,96 @@ body {
   font-size: 2rem;
 }
 
-.journey-title::after {
-  content: '🚀';
-  position: absolute;
-  right: -3rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
 }
 
-.enhanced-timeline {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.enhanced-timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 6px;
-  background: linear-gradient(180deg, #ffd700, #f6ad55);
-  transform: translateX(-50%);
-  border-radius: 3px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 4rem;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.timeline-item:nth-child(1) { animation-delay: 0.2s; }
-.timeline-item:nth-child(2) { animation-delay: 0.4s; }
-.timeline-item:nth-child(3) { animation-delay: 0.6s; }
-.timeline-item:nth-child(4) { animation-delay: 0.8s; }
-.timeline-item:nth-child(5) { animation-delay: 1.0s; }
-.timeline-item:nth-child(6) { animation-delay: 1.2s; }
-.timeline-item:nth-child(7) { animation-delay: 1.4s; }
-
-.timeline-content {
-  width: 45%;
-  padding: 2rem;
+.project-card {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   border: 2px solid rgba(255, 215, 0, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
   position: relative;
   backdrop-filter: blur(10px);
+  text-decoration: none;
+  color: inherit;
 }
 
-.timeline-item:nth-child(odd) .timeline-content {
-  margin-left: auto;
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.3);
 }
 
-.timeline-content::before {
-  content: '';
+.project-number {
   position: absolute;
-  top: 30px;
-  width: 0;
-  height: 0;
-  border: 15px solid transparent;
-}
-
-.timeline-item:nth-child(odd) .timeline-content::before {
-  left: -30px;
-  border-right-color: rgba(255, 255, 255, 0.9);
-}
-
-.timeline-item:nth-child(even) .timeline-content::before {
-  right: -30px;
-  border-left-color: rgba(255, 255, 255, 0.9);
-}
-
-.timeline-item[data-type="project"] .timeline-content {
-  border-left: 4px solid #61dafb;
-  background: linear-gradient(135deg, rgba(97, 218, 251, 0.1), rgba(255, 255, 255, 0.95));
-}
-
-.timeline-item[data-type="learning"] .timeline-content {
-  border-left: 4px solid #ffd700;
-}
-
-.timeline-item[data-type="experience"] .timeline-content {
-  border-left: 4px solid #ff6b6b;
-}
-
-.timeline-item[data-type="future"] .timeline-content {
-  border-left: 4px solid #20c997;
-}
-
-.timeline-icon {
-  position: absolute;
-  left: 50%;
-  top: 20px;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 60px;
+  top: 1rem;
+  left: 1rem;
+  width: 30px;
+  height: 30px;
   background: linear-gradient(135deg, #ffd700, #f6ad55);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-weight: 700;
   color: #2d3748;
-  border: 4px solid #ffffff;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+  font-size: 0.9rem;
   z-index: 2;
 }
 
-.timeline-date {
-  font-size: 0.9rem;
-  color: #d69e2e;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.timeline-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 1rem;
-}
-
-.timeline-description {
-  color: #4a5568;
-  line-height: 1.6;
-}
-
-.project-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.tag {
-  background: rgba(255, 215, 0, 0.15);
-  color: #d69e2e;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 1px solid rgba(255, 215, 0, 0.2);
-}
-
-/* Skills Tree Section */
-.skills-tree-section {
-  padding: 8rem 0;
-  background: linear-gradient(135deg, #fef5e7 0%, #ffffff 100%);
-  color: #2d3748;
+.project-image {
+  height: 200px;
+  background: #ffffff;
   position: relative;
   overflow: hidden;
 }
 
-.skills-tree-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffd700' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-  animation: starfield 20s linear infinite;
-}
-
-.skills-tree-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: #2d3748;
-}
-
-.skills-tree-subtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #4a5568;
-  margin-bottom: 4rem;
-}
-
-.tree-container {
-  position: relative;
-  height: 700px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.tree-trunk {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 80px;
-  background: linear-gradient(to top, 
-    #654321 0%, 
-    #8b4513 20%, 
-    #a0522d 40%, 
-    #8b4513 60%, 
-    #654321 80%, 
-    #8b4513 100%);
-  transform: translateX(-50%);
-  border-radius: 40px 40px 20px 20px;
-  box-shadow: 
-    inset -8px 0 15px rgba(0, 0, 0, 0.3),
-    inset 8px 0 15px rgba(0, 0, 0, 0.2),
-    0 0 30px rgba(139, 69, 19, 0.4);
-}
-
-.tree-trunk::before {
-  content: '';
-  position: absolute;
-  top: 20%;
-  left: 15%;
-  width: 12px;
-  height: 40px;
-  background: linear-gradient(45deg, #5d4e37, #8b7355);
-  border-radius: 6px;
-  transform: rotate(15deg);
-}
-
-.tree-trunk::after {
-  content: '';
-  position: absolute;
-  top: 60%;
-  right: 20%;
-  width: 8px;
-  height: 25px;
-  background: linear-gradient(45deg, #5d4e37, #8b7355);
-  border-radius: 4px;
-  transform: rotate(-20deg);
-}
-
-.tree-roots {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  width: 200px;
-  height: 60px;
-  transform: translateX(-50%);
-}
-
-.tree-roots::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 20%;
-  width: 60px;
-  height: 15px;
-  background: linear-gradient(45deg, #654321, #8b4513);
-  border-radius: 50%;
-  transform: rotate(-15deg);
-}
-
-.tree-roots::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 20%;
-  width: 60px;
-  height: 15px;
-  background: linear-gradient(45deg, #654321, #8b4513);
-  border-radius: 50%;
-  transform: rotate(15deg);
-}
-
-.tree-branches {
-  position: absolute;
-  bottom: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 400px;
-}
-
-.branch {
-  position: absolute;
-  background: linear-gradient(45deg, #654321, #8b4513, #a0522d);
-  border-radius: 15px;
-  box-shadow: 
-    inset -3px 0 8px rgba(0, 0, 0, 0.3),
-    inset 3px 0 8px rgba(0, 0, 0, 0.2);
-}
-
-/* 메인 가지들 */
-.branch-left {
-  width: 200px;
-  height: 25px;
-  left: 15%;
-  top: 60%;
-  transform: rotate(-35deg);
-  transform-origin: right center;
-}
-
-.branch-right {
-  width: 200px;
-  height: 25px;
-  right: 15%;
-  top: 60%;
-  transform: rotate(35deg);
-  transform-origin: left center;
-}
-
-.branch-left-small {
-  width: 140px;
-  height: 18px;
-  left: 25%;
-  top: 30%;
-  transform: rotate(-50deg);
-  transform-origin: right center;
-}
-
-.branch-right-small {
-  width: 140px;
-  height: 18px;
-  right: 25%;
-  top: 30%;
-  transform: rotate(50deg);
-  transform-origin: left center;
-}
-
-/* 추가 작은 가지들 */
-.branch-left::before {
-  content: '';
-  position: absolute;
-  left: 30%;
-  top: -10px;
-  width: 80px;
-  height: 12px;
-  background: linear-gradient(45deg, #654321, #8b4513);
-  border-radius: 10px;
-  transform: rotate(-25deg);
-}
-
-.branch-right::before {
-  content: '';
-  position: absolute;
-  right: 30%;
-  top: -10px;
-  width: 80px;
-  height: 12px;
-  background: linear-gradient(45deg, #654321, #8b4513);
-  border-radius: 10px;
-  transform: rotate(25deg);
-}
-
-.branch-left::after {
-  content: '';
-  position: absolute;
-  left: 60%;
-  bottom: -8px;
-  width: 60px;
-  height: 10px;
-  background: linear-gradient(45deg, #654321, #8b4513);
-  border-radius: 8px;
-  transform: rotate(15deg);
-}
-
-.branch-right::after {
-  content: '';
-  position: absolute;
-  right: 60%;
-  bottom: -8px;
-  width: 60px;
-  height: 10px;
-  background: linear-gradient(45deg, #654321, #8b4513);
-  border-radius: 8px;
-  transform: rotate(-15deg);
-}
-
-.skills-fruits {
-  position: absolute;
-  top: 0;
-  left: 0;
+.project-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.skill-fruit {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.2),
-    inset 0 2px 10px rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  position: relative;
+.project-card:hover .project-image img {
+  transform: scale(1.1);
 }
 
-.skill-fruit::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 20%;
-  width: 20px;
-  height: 15px;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  transform: rotate(-15deg);
+.project-info {
+  padding: 1.5rem;
 }
 
-.skill-fruit:hover {
-  transform: scale(1.3) !important;
-  z-index: 10;
-  box-shadow: 
-    0 15px 40px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(255, 215, 0, 0.6);
-}
-
-.skill-name {
-  font-size: 0.75rem;
+.project-info h3 {
+  font-size: 1.3rem;
   font-weight: 700;
-  color: white;
-  text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  z-index: 2;
-  position: relative;
-}
-
-.tree-leaves {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.leaf {
-  position: absolute;
-  font-size: 1.8rem;
-  animation: leafFloat 4s ease-in-out infinite;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-/* 더 많은 나뭇잎들을 위한 추가 스타일 */
-.leaf:nth-child(even) {
-  animation-duration: 5s;
-  animation-direction: reverse;
-}
-
-.leaf:nth-child(3n) {
-  animation-duration: 6s;
-  font-size: 1.5rem;
-}
-
-.leaf:nth-child(4n) {
-  animation-duration: 4.5s;
-  font-size: 2rem;
-}
-
-.skills-description {
-  margin-top: 4rem;
-  text-align: center;
-}
-
-.skills-description h3 {
-  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
   color: #2d3748;
-  margin-bottom: 1.5rem;
 }
 
-/* 기존 Skills Section 스타일들 */
-.skills-section { 
-  padding: 13rem 0; 
-  background-color: #f8f9fa; 
+.project-info p {
+  color: #4a5568;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-.skills-main-title { 
-  text-align: center; 
-  font-size: 2.5rem; 
-  color: #1a1a1a; 
-  margin-bottom: 2rem; 
-  font-weight: 700; 
-}
-
-.skills-header { 
-  text-align: center; 
-  margin-bottom: 3rem; 
-  background-color: #ffffff; 
-  padding: 2rem; 
-  border-radius: 15px; 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
-  border-left: 5px solid #ffd700; 
-}
-
-.course-info h3 { 
-  font-size: 1.3rem; 
-  color: #ffd700; 
-  margin-bottom: 0.5rem; 
-  font-weight: 600; 
-}
-
-.course-info h4 { 
-  font-size: 1.5rem; 
-  color: #1a1a1a; 
-  margin-bottom: 0.5rem; 
-  font-weight: 700; 
-}
-
-.course-info p { 
-  font-size: 1.1rem; 
-  color: #666666; 
-  margin: 0; 
-  font-weight: 500; 
-}
-
-.skills-content { 
+.placeholder-project-image { 
   display: flex; 
-  flex-direction: column; 
-  gap: 2.5rem; 
-}
-
-.skill-category { 
-  background-color: #ffffff; 
-  padding: 2rem; 
-  border-radius: 15px; 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
-  border: 1px solid #e9ecef; 
-  transition: transform 0.3s ease; 
-}
-
-.skill-category:hover { 
-  transform: translateY(-3px); 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
-}
-
-.category-title { 
-  font-size: 1.4rem; 
-  color: #8b5cf6; 
-  margin-bottom: 1.5rem; 
-  font-weight: 600; 
-  padding-bottom: 0.5rem; 
-  border-bottom: 2px solid #ffd700; 
-  display: inline-block; 
-}
-
-.skill-items { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 1.5rem; 
-}
-
-.skill-item { 
-  background-color: #f8f9fa; 
-  padding: 1.5rem; 
-  border-radius: 10px; 
-  border: 1px solid #e9ecef; 
-  transition: all 0.3s ease; 
-}
-
-.skill-item:hover { 
-  background-color: #ffffff; 
-  border-color: #ffd700; 
-  transform: translateY(-2px); 
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2); 
-}
-
-.skill-item h4 { 
-  font-size: 1.1rem; 
-  color: #1a1a1a; 
-  margin-bottom: 0.8rem; 
-  font-weight: 600; 
-}
-
-.skill-item p { 
-  font-size: 0.9rem; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%; 
+  height: 100%; 
   color: #666666; 
-  line-height: 1.5; 
-  margin: 0; 
+  font-size: 1.1rem; 
+  font-weight: 600; 
 }
 
-/* About Section 스타일들 */
+/* Quick About Section 스타일들 */
 .quick-about { 
   padding: 5rem 0; 
   background-color: #f8f9fa; 
@@ -1376,119 +558,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* Projects Section - 인터랙티브 카드 */
-.featured-projects {
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #fef5e7 0%, #ffffff 100%);
-}
-
-.projects-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 3rem;
-  color: #2d3748;
-  position: relative;
-}
-
-.projects-title::before {
-  content: '💻';
-  position: absolute;
-  left: -3rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  overflow: hidden;
-  border: 2px solid rgba(255, 215, 0, 0.1);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  position: relative;
-  backdrop-filter: blur(10px);
-  text-decoration: none;
-  color: inherit;
-}
-
-.project-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
-  border-color: rgba(255, 215, 0, 0.3);
-}
-
-.project-number {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(135deg, #ffd700, #f6ad55);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #2d3748;
-  font-size: 0.9rem;
-  z-index: 2;
-}
-
-.project-image {
-  height: 200px;
-  background: linear-gradient(135deg, #f7fafc, #edf2f7);
-  position: relative;
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.1);
-}
-
-.project-info {
-  padding: 1.5rem;
-}
-
-.project-info h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-  color: #2d3748;
-}
-
-.project-info p {
-  color: #4a5568;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-.placeholder-project-image { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  width: 100%; 
-  height: 100%; 
-  color: #666666; 
-  font-size: 1.1rem; 
-  font-weight: 600; 
-}
-
 /* Footer */
 .footer { 
   background-color: #1a1a1a; 
@@ -1513,51 +582,6 @@ section[id] {
   100% { background-position: 200% 0; }
 }
 
-@keyframes fillAnimation {
-  from { width: 0%; }
-  to { width: 100%; }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 5px rgba(255, 107, 107, 0.5); }
-  50% { box-shadow: 0 0 15px rgba(255, 107, 107, 0.8); }
-}
-
-@keyframes grow {
-  from { width: 0%; }
-  to { width: 100%; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes leafFloat {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   25% { transform: translateY(-10px) rotate(5deg); }
@@ -1580,27 +604,6 @@ section[id] {
     border-radius: 0; 
   }
   
-  .hero-container { 
-    grid-template-columns: 1fr; 
-    text-align: center; 
-    gap: 3rem; 
-  }
-  
-  .hero-title { 
-    font-size: 2.5rem; 
-  }
-  
-  .hero-buttons { 
-    flex-direction: column; 
-    align-items: center; 
-    gap: 1rem; 
-  }
-  
-  .btn-primary, .btn-secondary { 
-    width: 100%; 
-    max-width: 280px; 
-  }
-  
   /* 모바일에서 소셜 링크를 하단으로 */
   .social-links { 
     position: relative; 
@@ -1619,33 +622,6 @@ section[id] {
     height: 50px;
   }
   
-  .profile-placeholder {
-    width: 220px;
-    height: 220px;
-  }
-  
-  .enhanced-timeline::before { 
-    left: 20px; 
-  }
-  
-  .timeline-content { 
-    width: calc(100% - 60px); 
-    margin-left: 60px !important; 
-  }
-  
-  .timeline-content::before { 
-    left: -30px !important; 
-    border-right-color: rgba(255, 255, 255, 0.9) !important; 
-    border-left-color: transparent !important; 
-  }
-  
-  .timeline-icon { 
-    left: 20px; 
-    transform: none; 
-  }
-  
-  .journey-title::before, 
-  .journey-title::after, 
   .projects-title::before { 
     display: none; 
   }
@@ -1669,245 +645,5 @@ section[id] {
   
   .credentials-grid { 
     grid-template-columns: 1fr; 
-  }
-  
-  .tree-container {
-    height: 400px;
-  }
-
-  .skill-fruit {
-    width: 60px;
-    height: 60px;
-  }
-
-  .skill-name {
-    font-size: 0.7rem;
-  }
-  
-  .skills-header { 
-    padding: 1.5rem; 
-  }
-  
-  .course-info h4 { 
-    font-size: 1.2rem; 
-  }
-  
-  .skill-items { 
-    grid-template-columns: 1fr; 
-  }
-  
-  .skill-category { 
-    padding: 1.5rem; 
-  }
-}
-/* 기존 스타일에 추가할 부분들 */
-
-/* 프로젝트 클릭 가능한 타임라인 아이템 */
-.project-timeline-item {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.project-timeline-item:hover {
-  transform: translateY(-5px);
-}
-
-.project-timeline-item:hover .timeline-content {
-  box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3);
-  border-color: rgba(255, 215, 0, 0.4);
-}
-
-.click-hint {
-  font-size: 0.8rem;
-  color: #d69e2e;
-  font-weight: 500;
-  opacity: 0.8;
-}
-
-/* 프로필 이미지 복구 */
-.profile-image {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #ffffff;
-  box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 2;
-}
-
-.profile-image:hover {
-  transform: scale(1.05) rotate(2deg);
-  box-shadow: 0 25px 80px rgba(255, 215, 0, 0.4);
-}
-
-.placeholder-image {
-  width: 280px;
-  height: 280px;
-  background: linear-gradient(135deg, #ffd700, #f6ad55);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #2d3748;
-  border: 4px solid #ffffff;
-  box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
-  position: relative;
-}
-
-/* 실제 프로필 이미지 */
-.real-profile-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #ffffff;
-  box-shadow: 0 25px 80px rgba(255, 215, 0, 0.4);
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.4s ease;
-  z-index: 20;
-}
-
-/* 호버 효과 */
-.profile-container:hover .real-profile-image {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* 기존 CSS 파일 맨 끝에 이 스타일들을 추가하세요 */
-
-/* 깔끔한 나무 이미지 섹션 - 나뭇잎 효과 제거 */
-.simple-tree-section {
-  padding: 8rem 0;
-  background: linear-gradient(135deg, #fef5e7 0%, #ffffff 100%);
-  position: relative;
-}
-
-.tree-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: #2d3748;
-}
-
-.tree-subtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #4a5568;
-  margin-bottom: 4rem;
-}
-
-.tree-image-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 700px;
-  padding: 0 5rem;
-}
-
-.tree-image-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-}
-
-.skills-tree-image {
-  width: 100%; 
-  max-height: 700px;
-  height: auto;
-  object-fit: contain;
-  transition: all 0.3s ease;
-}
-
-.skills-tree-image:hover {
-  transform: scale(1.02);
-}
-
-.tree-placeholder {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #4a5568;
-  padding: 3rem;
-  background: none;
-  border: none;
-}
-
-.tree-description {
-  text-align: center;
-  margin-top: 4rem;
-}
-
-.tree-description h3 {
-  font-size: 1.5rem;
-  color: #2d3748;
-  margin-bottom: 1rem;
-}
-
-.tree-description p {
-  color: #4a5568;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* 모바일 최적화 */
-@media (max-width: 768px) {
-  .simple-tree-section {
-    padding: 4rem 0;
-  }
-
-  .tree-title {
-    font-size: 2rem;
-  }
-
-  .tree-subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .tree-image-container {
-    min-height: 500px;
-    padding: 0 3rem;
-  }
-
-  .tree-image-wrapper {
-    max-width: 100%;
-  }
-
-  .skills-tree-image {
-    max-height: 500px;
-    width: 100%;
-  }
-
-  .tree-description {
-    margin-top: 2rem;
-    padding: 0 1rem;
-  }
-
-  .tree-description h3 {
-    font-size: 1.3rem;
-  }
-
-  .tree-description p {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .tree-image-container {
-    min-height: 400px;
-    padding: 0 2rem;
-  }
-
-  .skills-tree-image {
-    max-height: 400px;
   }
 }

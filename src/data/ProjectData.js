@@ -1,7 +1,7 @@
-// src/data/ProjectData.js - Urban Village 프로젝트 업데이트
+// src/data/ProjectData.js - PDF 내용 완전 반영 (모든 섹션 포함)
 export const projects = {
   1: {
-    title: "모갔슈? - 탈모인 익명 공감 커뮤니티",
+    title: "모갔슈 - 탈모인 익명 공감 커뮤니티",
     period: "2025.05.12 ~ 06.20",
     notionLink: "https://www.notion.so/Project-20ddb822a28e80ef92dfd65b470d78e9",
     description: "모갔슈(毛털모 + 갔슈?_전라도 사투리)는 탈모인들을 위한 익명 기반 공감 커뮤니티 앱으로, AI 기반 이미지 분석을 통해 탈모 상태를 진단하고 맞춤형 정보를 제공하며, 유쾌한 위로와 소통이 가능한 웹+앱 통합 서비스입니다.",
@@ -10,17 +10,17 @@ export const projects = {
       "JavaScript", "Thymeleaf", "Ajax", "Python", "OpenCV", "Teachable Machine",
       "AWS EC2", "GitHub Actions", "Git", "Gradle", "STS4", "DBeaver"
     ],
-    videoUrl: null,
-    thumbnail: "/image/mogatshoo.png",
+    videoUrl: "https://www.youtube.com/embed/JcuWNKhWlmo",
+    thumbnail: "/image/1_1.png",
     images: [
-      "/image/projectimage/3_1.png",
-      "/image/projectimage/3_2.png", 
-      "/image/projectimage/3_3.png",
-      "/image/projectimage/3_4.png",
-      "/image/projectimage/3_5.png"
+      "/image/projectimage/1_1.png",
+      "/image/projectimage/1_2.png", 
+      "/image/projectimage/1_3.png",
+      "/image/projectimage/1_4.png",
+      "/image/projectimage/1_5.png"
     ],
     projectOverview: {
-      projectName: "모갔슈? - 탈모인 익명 공감 커뮤니티",
+      projectName: "모갔슈 - 탈모인 익명 공감 커뮤니티",
       developmentPeriod: "2025.05.12 ~ 2025.06.20",
       developmentTeam: 3,
       projectType: "웹+앱 통합 커뮤니티 서비스 (익명 기반 탈모 진단 및 공감 플랫폼)",
@@ -59,22 +59,80 @@ export const projects = {
         ]
       },
       community: {
-        title: "질문작성 / 투표",
+        title: "투표 기능",
         description: "익명성을 보장하면서도 재미있게 참여할 수 있는 투표 시스템으로 탈모 고민 공유 활성화",
-        features: [
-          "익명 질문 시스템: 민감한 탈모 고민을 부담 없이 질문할 수 있는 환경 조성",
-          "4지선다 투표: 탈모 테스트 사진 4개 중 선택하여 직관적인 비교 투표",
-          "랜덤 질문 추천: 미투표 공개 질문 중 랜덤 선택으로 다양한 참여 유도",
-          "관리자 질문 관리: 일련번호 자동 생성(Q0001~)과 공개/비공개 상태 제어",
-          "Windows 95 레트로 UI: 친근하고 유머러스한 분위기 연출로 무거운 주제 완화"
-        ],
-        technicalDetails: [
-          "중복 투표 방지: DB 레벨 제약조건으로 데이터 무결성 보장",
-          "키보드 단축키: Y/N, Enter/ESC로 빠른 조작 지원",
-          "Ajax 비동기 투표: 페이지 새로고침 없는 부드러운 UX",
-          "투표 완료 처리: 3초 후 자동 다음 질문 이동으로 연속 참여 유도",
-          "포인트 연동: 투표 참여 시 포인트 지급으로 활동 장려"
-        ]
+        votingSystem: {
+          title: "투표 시스템 (Voting Module)",
+          features: [
+            "랜덤 질문 제공: 사용자가 아직 투표하지 않은 공개 질문 중 무작위 선택",
+            "4지선다 이미지 투표: Firebase Storage URL 기반 탈모 진단 사진 4개 중 선택",
+            "중복 투표 방지: DB 제약조건으로 동일 질문에 대한 중복 투표 차단",
+            "실시간 AJAX 처리: 페이지 새로고침 없는 부드러운 투표 경험",
+            "권한 기반 접근제어: USER 권한만 투표 가능, ADMIN은 투표 제한"
+          ],
+          technicalDetails: [
+            "투표 상태 동적 계산: 현재 시간 기준으로 '보류/진행중/종료' 실시간 판단",
+            "이미지 경로 검증: Firebase Storage URL과 상대경로 자동 변환",
+            "트랜잭션 보장: @Transactional로 투표 데이터 일관성 확보"
+          ]
+        },
+        questionManagement: {
+          title: "질문 관리 시스템 (Question Management)",
+          features: [
+            "질문 라이프사이클 관리: 생성 → 공개/비공개 → 투표기간 설정 → 자동 아카이빙",
+            "투표 기간 자동화: 스케줄러 기반 상태 변경 (보류 → 진행중 → 종료)",
+            "아카이빙 시스템: 종료된 질문을 completed_question 테이블로 자동 이동",
+            "통합 검색: 키워드, 공개상태, 생성일, 투표일 기반 다중 조건 검색"
+          ]
+        },
+        votingStatistics: {
+          title: "투표 통계 및 분석 (Voting Statistics)",
+          features: [
+            "다중 테이블 통합: active + completed 질문 테이블 UNION 조회",
+            "세분화된 지표 계산: 투표율, 참여율, 최다득표율, 참여자기준 투표율"
+          ],
+          calculations: [
+            "투표율: 총 투표수 / 전체 회원수 × 100",
+            "참여율: 고유 투표자 수 / 전체 회원수 × 100",
+            "최다득표율: 최다득표수 / 총 투표수 × 100",
+            "참여자기준 투표율: 총 투표수 / 고유 투표자 수 × 100"
+          ]
+        },
+        databaseDesign: {
+          title: "데이터베이스 설계",
+          questionTable: [
+            "serial_number (PK): Q0001 형식 자동 증가",
+            "voting_start_date/voting_end_date: 투표 기간 관리",
+            "is_public: 공개/비공개 상태 제어"
+          ],
+          votingTable: [
+            "serial_number: 질문 참조",
+            "voter_id: 투표자 (USER 권한만)",
+            "voted_id: 선택된 옵션/회원 ID",
+            "selected_option: 선택한 옵션 (option1~4)"
+          ]
+        },
+        securityAndOptimization: {
+          title: "보안 및 최적화",
+          security: [
+            "Spring Security 통합: Authentication 기반 사용자 식별",
+            "권한별 접근제어: USER만 투표, ADMIN만 질문 관리",
+            "세션 기반 중복 방지: 동일 세션 내 중복 투표 차단",
+            "입력값 검증: 모든 파라미터 null/empty 체크"
+          ],
+          optimization: [
+            "페이징 처리: 대용량 데이터 효율적 조회",
+            "인덱스 활용: serial_number, voter_id 기반 빠른 검색",
+            "스케줄러 최적화: 실행 주기별 작업 분산 (10분/1시간/일일)",
+            "캐시 활용: 전체 회원 수 등 자주 조회되는 데이터 최적화"
+          ],
+          extensibility: [
+            "모듈화 설계: Service Layer 분리로 기능별 독립성 확보",
+            "Repository Pattern: 데이터 접근 로직 추상화",
+            "DTO/Entity 분리: 계층 간 데이터 전송 최적화",
+            "로깅 시스템: SLF4J 기반 상세 로그 추적"
+          ]
+        }
       },
       aiDiagnosis: {
         title: "탈모 테스트 기능",
@@ -92,7 +150,17 @@ export const projects = {
           "OpenCV 전처리: 이미지 품질 향상 및 특징 추출",
           "브라우저 모델 실행: .js 형태로 변환하여 서버 부하 없는 클라이언트 처리",
           "FileReader API: 이미지 미리보기와 동시에 분석 준비"
-        ]
+        ],
+        aiModelStructure: {
+          title: "AI 모델 구조",
+          dataCollection: [
+            "데이터 수집: Google Dataset, 한국인 탈모 갤러리, Version 증강 이미지",
+            "모델 학습: 5단계 탈모 분류 + 예외 처리 (손, 얼굴, 문서, 기타)",
+            "데이터 증강: Albumentations를 통한 7배 데이터 확장",
+            "모델 배포: JavaScript 모델로 변환하여 클라이언트 실시간 처리",
+            "정확도 향상: OpenCV 전처리 + 다양한 각도/조명 조건 학습"
+          ]
+        }
       },
       mapService: {
         title: "탈모 병원 찾기",
@@ -129,6 +197,31 @@ export const projects = {
           "randomUUID 운세: 매번 다른 운세 결과로 재방문 동기 부여",
           "포인트 잔액 실시간 표시: 사용자 현재 보유 포인트 항상 확인 가능"
         ]
+      },
+      pointShop: {
+        title: "포인트샵 시스템",
+        description: "사용자가 보유한 포인트로 상품을 구매하고, 포인트와 상품 정보를 효율적으로 관리하는 시스템",
+        userFeatures: [
+          "상품 구매: 보유한 포인트로 상품을 구매",
+          "상품 상세보기: 상품 이미지, 가격, 설명 확인 후 구매 결정",
+          "상품구매내역 조회: 이전에 구매한 상품 정보 확인",
+          "결제 완료 페이지: 구매 완료 후 결제 내역 확인",
+          "재고 소진(품절): 재고가 소진된 상품은 구매 불가, 품절 상태 표시"
+        ],
+        adminFeatures: [
+          "상품관리: 상품 등록, 수정, 삭제(이미지, 가격, 설명, 카테고리 관리)",
+          "재고 관리: 상품 재고 실시간 관리",
+          "통계 및 분석: 상품 판매 현황 및 사용자 활동 데이터 분석",
+          "상품 카테고리 관리: 상품을 다양한 카테고리로 분류 및 관리",
+          "포인트 차감 관리: 사용자의 포인트 차감 관리"
+        ],
+        technicalDetails: [
+          "JPA 페이징: 포인트 상품 및 구매내역을 페이지당 10개씩 효율적으로 조회",
+          "포인트 트랜잭션 관리: 포인트 차감 트랜잭션을 안전하게 처리하고, 낙관적 락(@Version) 사용",
+          "재고 동시성 제어: 비관적 락을 활용해 상품의 재고를 동시성 문제 없이 관리",
+          "Firebase 이미지 관리: 상품 이미지는 Firebase Storage에 저장 및 관리",
+          "카테고리별 상품 조회: 사용자가 원하는 카테고리에서 상품을 필터링하여 쉽게 조회 가능"
+        ]
       }
     },
     features: [
@@ -139,6 +232,7 @@ export const projects = {
       "Windows 95 스타일 레트로 UI/UX",
       "카카오 지도 API를 활용한 탈모 병원 찾기",
       "포인트 시스템 및 오늘의 운세",
+      "포인트샵을 통한 상품 구매 시스템",
       "이메일 인증 및 비밀번호 찾기",
       "실시간 비동기 처리 (Ajax)",
       "반응형 웹 디자인",
@@ -204,17 +298,12 @@ export const projects = {
         description: "JavaMailSender와 @Async를 활용하여 회원가입, ID/PW 찾기 시 실시간 이메일 인증을 처리합니다. randomUUID로 6자리 인증번호를 생성하고, 3분 타이머와 함께 인증 UI를 동적으로 생성하여 사용자 경험을 최적화했습니다."
       }
     ],
-    externalLinks: {
-      "기능명세서": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRVYOygTrTNBNytmTfv5SujokSA3QIlPyaG0SHuP1a-DXaPAcCxu42BoF4t2a5zR7w22IXzEbtwRz_U/pubhtml",
-      "WBS": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQzEtGmdmMyMBthOnJAbT_waEKrh7CrcYlkn0MWF-p-uj1c8A41-e3g4SbYvJcqbloM8_0v5Tlf8lna/pubhtml"
-    },
     apis: [
       "카카오 지도 API - 탈모 병원 위치 검색 및 길찾기",
       "OAuth2 API - 카카오, 네이버, 구글 소셜 로그인",
       "JavaMail API - 회원가입 및 비밀번호 찾기 이메일 인증",
       "Teachable Machine API - AI 기반 탈모 이미지 분석",
-      "Geolocation API - 사용자 현재 위치 확인",
-      "공공데이터 API - 병원 정보 제공 (예정)"
+      "Geolocation API - 사용자 현재 위치 확인"
     ],
     teamMembers: [
       { name: "서하나", role: "리더", portfolio: "https://www.notion.so/1b9db822a28e801eb04af2f96ab48d5a" },
@@ -238,18 +327,18 @@ export const projects = {
       "Oracle Cloud", "Tomcat 9", "HTML/CSS", "JavaScript", "Bootstrap 5", 
       "jQuery", "Maven", "Eclipse", "VSCode", "GitHub", "SQL Developer", "ERD cloud"
     ],
-    videoUrl: "https://www.youtube.com/embed/JMxSRmcZiU8",
-    thumbnail: "/image/projectimage/2_1.png",
+    videoUrl: "https://youtu.be/vfzpYiFC3Rw",
+    thumbnail: "/image/2_1.png",
     images: [
       "/image/projectimage/2_1.png",
       "/image/projectimage/2_2.png", 
       "/image/projectimage/2_3.png",
-      "/image/projectimage/2_9.jpg",
       "/image/projectimage/2_4.png",
       "/image/projectimage/2_5.png",
       "/image/projectimage/2_6.png",
       "/image/projectimage/2_7.png",
-      "/image/projectimage/2_8.png"
+      "/image/projectimage/2_8.png",
+      "/image/projectimage/2_9.png"
     ],
     projectOverview: {
       projectName: "Urban Village 숙박 플랫폼",
@@ -258,32 +347,37 @@ export const projects = {
       projectType: "숙박 플랫폼 (고객, 사업자/숙소, 관리자 파트 기능 분리)",
       gitRepository: "https://github.com/HanaSeoo/urban-village.git"
     },
-    projectDemo: {
-      mainVideo: "https://youtu.be/vfzpYiFC3Rw",
-      description: "Urban Village 숙박 플랫폼의 전체 기능을 시연하는 데모 영상입니다."
-    },
     projectStructureAndDesign: {
       siteMap: {
         customerFlow: {
           title: "고객 데이터 입출력 순서",
           description: "고객이 서비스를 이용하는 전체적인 흐름과 데이터 처리 과정",
-          image: "/image/projectimage/customer_flow.png"
+          flow: [
+            "회원가입 → 고객 로그인 → 숙소 검색 및 예약 → 위시리스트 → 청소관리자 지원"
+          ]
         },
         adminFlow: {
           title: "Main & 관리자 입출력 순서", 
           description: "메인 페이지와 관리자가 시스템을 관리하는 흐름",
-          image: "/image/projectimage/admin_flow.png"
+          flow: [
+            "메인 화면 → 숙소 검색 결과 → 숙소 상세 → 숙소 리뷰 → 관리자 페이지 → 숙소 추천/삭제 → 매출 분석 → 호스트 추천 등록"
+          ]
         }
       },
       databaseERD: {
         title: "Database ERD",
         description: "Urban Village 서비스 운영을 위한 데이터베이스의 구조를 만드는 역할입니다.",
-        image: "/image/projectimage/erd_diagram.png",
         features: [
           "핵심 정보 저장 테이블: 사용자 관련(회원, 관리자, 청소 담당자), 숙소 관련(숙소 정보, 객실 정보), 예약 및 거래 관련(예약, 결제, 찜 목록), 기타(리뷰, 쿠폰)",
           "자동 번호 생성 (시퀀스): 숙소, 찜 목록, 리뷰 등에 새로운 데이터가 추가될 때마다 자동으로 고유한 번호를 매겨주는 기능",
           "자동 실행 기능 (트리거): 데이터가 입력되거나 수정될 때 특정 작업(ID 자동 부여, 수정 날짜 갱신)이 자동으로 실행",
           "데이터 조회 편의 기능 (뷰): 결제 데이터를 기반으로 일별, 월별, 연도별 매출 정보를 쉽게 조회할 수 있도록 미리 정의된 조회 방식 제공"
+        ],
+        coreStructure: [
+          "사용자 관련: 회원, 관리자, 청소 담당자 정보를 분리해서 관리합니다",
+          "숙소 관련: 숙소 자체 정보와 각 숙소의 객실 정보를 저장하며, 관리자/청소 담당자와 연결됩니다",
+          "예약 및 거래 관련: 예약 및 결제 정보, 회원들의 찜 목록을 관리합니다",
+          "기타: 리뷰, 쿠폰 정보 등을 저장하는 테이블도 포함합니다"
         ]
       }
     },
@@ -293,6 +387,59 @@ export const projects = {
       "지역 공동체 발전: 숙소 운영으로 발생하는 수익을 마을 자치금으로 활용하여 지역 공동체의 지속가능한 발전에 기여하고자 했습니다.",
       "실무 수준 개발 경험: Spring Framework 기반의 실제 서비스 수준의 웹 애플리케이션을 개발하여 실무 역량을 기르고자 했습니다."
     ],
+    mainFeatures: {
+      loginAndSignup: {
+        title: "로그인 및 회원가입",
+        features: [
+          "고객과 관리자 로그인, 회원가입 분리",
+          "구글 API를 이용한 소셜 로그인", 
+          "스프링 이메일을 통한 가입, 암호찾기 시 이메일 인증",
+          "비동기적으로 중복체크"
+        ]
+      },
+      accommodationSearch: {
+        title: "숙소 검색",
+        features: [
+          "메인 화면에서 검색창, 숙소 지역에 따른 카테고리, 호스트 추천으로 원하는 숙소를 탐색할 수 있습니다",
+          "숙소페이지에는 카카오 API 지도가 있어 정확한 위치 정보를 전달 받을 수 있습니다",
+          "메인페이지에 별점과 예약수 조회수가 떠 있어 사용자가 좀 더 편리하게 숙소의 정보를 파악 할 수있습니다"
+        ]
+      },
+      wishlist: {
+        title: "숙소 찜하기",
+        features: [
+          "원하는 숙소를 찜하거나 취소할 수 있고, 찜한 목록은 헤더 햄버거 버튼 위시리스트 탭에서 확인 가능합니다",
+          "또한 메인페이지에서 숙소에 하트 버튼을 누르면 위시리스트에 담거나 취소 할 수 있습니다"
+        ]
+      },
+      paymentAndReservation: {
+        title: "결제 및 예약",
+        features: [
+          "아임포트 API를 이용해 결제 서비스를 구현했으며 예약된 날짜는 중복처리되어 예약이 불가능하게 됩니다",
+          "관리자는 어떤 고객이 어떤 숙소를 예약 했는지 파악 할 수 있습니다",
+          "만약 체크아웃 날짜보다 일찍 퇴실 처리할 경우 예약 중복 처리된 방은 다시 예약할 수 있도록 처리됩니다"
+        ]
+      },
+      reviews: {
+        title: "리뷰",
+        customerFeatures: [
+          "퇴실 완료처리된 예약에 한해 고객은 별점 평가과 리뷰 작성이 가능합니다",
+          "작성된 평가와 리뷰는 숙소 상세페이지 및 메인페이지 숙소 리스트에서 확인이 가능합니다",
+          "작성된 리뷰를 관리자가 삭제할 수 있습니다"
+        ]
+      },
+      adminMode: {
+        title: "관리자 모드",
+        statistics: {
+          features: [
+            "관리자는 전반적인 일별, 월별, 연도별 매출을 그래프로 확인할 수 있습니다",
+            "관리자는 모든 숙소의 등록. 삭제, 호스트 추천숙소 등록이 가능하도록 하였습니다",
+            "숙소는 경상북도라는 일정 지역의 주소지만 등록이 가능하게 구성하였습니다",
+            "청소부를 선별하는 서류를 첨부받고 관리할 수 있으며 청소부 배정을 관리자가 실행 할 수 있습니다"
+          ]
+        }
+      }
+    },
     features: [
       "고객과 관리자 로그인, 회원가입 분리",
       "구글 API를 이용한 소셜 로그인",
@@ -324,7 +471,7 @@ export const projects = {
       "빌드도구": "Maven을 통한 프로젝트 관리"
     },
     techStack: {
-      "백엔드 (Backend)": [
+      "백엔드": [
         "Java 11 - 메인 개발 언어",
         "Spring MVC - 웹 애플리케이션 프레임워크", 
         "Spring AOP - 관점 지향 프로그래밍",
@@ -342,13 +489,13 @@ export const projects = {
         "JUnit - 테스트 프레임워크",
         "Apache Tiles - 서버 사이드 템플릿/레이아웃"
       ],
-      "DB & WAS": [
+      "데이터베이스 & WAS": [
         "Oracle - 데이터베이스 시스템",
         "Oracle SQL - 데이터베이스 질의 언어",
         "Oracle Cloud - 클라우드 환경",
         "Tomcat 9 - 웹 애플리케이션 서버"
       ],
-      "프론트 (Frontend)": [
+      "프론트엔드": [
         "HTML/CSS - 웹 페이지 구조 및 스타일",
         "JavaScript - 클라이언트 측 동적 기능",
         "Bootstrap 5 - 프론트엔드 UI 프레임워크",
@@ -381,95 +528,17 @@ export const projects = {
     keyTechnicalFeatures: [
       {
         title: "Interceptor를 사용한 로그인과 viewName관리",
-        description: "로그인 확인이 필요한 메소드에서 세션을 if문으로 반복하여 확인하는 중복 코드를 제거했습니다. 관리자가 접근할 수 있는 페이지와 고객이 접근할 수 있는 페이지를 확실하게 분리했습니다. 주요 기능에 접근할 때 로그인이 안되어 있다면 로그인 창으로 갈 수 있도록 유도했습니다.",
-        image: "/image/projectimage/interceptor_login.png"
+        description: "로그인 확인이 필요한 메소드에서 세션을 if문으로 반복하여 확인하는 중복 코드를 제거했습니다. 관리자가 접근할 수 있는 페이지와 고객이 접근할 수 있는 페이지를 확실하게 분리했습니다. 주요 기능에 접근할 때 로그인이 안되어 있다면 로그인 창으로 갈 수 있도록 유도했습니다."
       },
       {
         title: "비즈니스 로직의 분리",
-        description: "비즈니스 로직을 Controller, Service, DAO 계층으로 명확히 분리하여 개발하였습니다. 계층별 책임을 분리해 유지보수성과 확장성을 높였습니다.",
-        image: "/image/projectimage/business_logic.png"
+        description: "비즈니스 로직을 Controller, Service, DAO 계층으로 명확히 분리하여 개발하였습니다. 계층별 책임을 분리해 유지보수성과 확장성을 높였습니다."
       },
       {
         title: "Transaction의 사용",
         description: "결제를 할 때 @Transactional을 사용하여 결제 로직을 좀 더 견고히 했습니다. 데이터 일관성을 보장하여 결제 등록이 실패하면 DB에 어떤 데이터도 저장되지 않고, 성공한 경우에만 결제 정보가 안전하게 저장됩니다. 오류 발생 시 자동 롤백으로 DB 상태를 이전 상태로 복구합니다."
       }
     ],
-    mainFeatures: {
-      loginAndSignup: {
-        title: "로그인 및 회원가입",
-        features: [
-          "고객과 관리자 로그인, 회원가입 분리",
-          "구글 API를 이용한 소셜 로그인", 
-          "스프링 이메일을 통한 가입, 암호찾기 시 이메일 인증",
-          "비동기적으로 중복체크"
-        ],
-        image: "/image/projectimage/login_signup.png"
-      },
-      accommodationSearch: {
-        title: "숙소 검색",
-        features: [
-          "메인 화면에서 검색창, 숙소 지역에 따른 카테고리, 호스트 추천으로 원하는 숙소를 탐색할 수 있습니다",
-          "숙소페이지에는 카카오 API 지도가 있어 정확한 위치 정보를 전달 받을 수 있습니다",
-          "메인페이지에 별점과 예약수 조회수가 떠 있어 사용자가 좀 더 편리하게 숙소의 정보를 파악 할 수있습니다"
-        ],
-        image: "/image/projectimage/accommodation_search.png"
-      },
-      wishlist: {
-        title: "숙소 찜하기",
-        features: [
-          "원하는 숙소를 찜하거나 취소할 수 있고, 찜한 목록은 헤더 햄버거 버튼 위시리스트 탭에서 확인 가능합니다",
-          "또한 메인페이지에서 숙소에 하트 버튼을 누르면 위시리스트에 담거나 취소 할 수 있습니다"
-        ],
-        image: "/image/projectimage/wishlist.png"
-      },
-      paymentAndReservation: {
-        title: "결제 및 예약",
-        features: [
-          "아임포트 API를 이용해 결제 서비스를 구현했으며 예약된 날짜는 중복처리되어 예약이 불가능하게 됩니다",
-          "관리자는 어떤 고객이 어떤 숙소를 예약 했는지 파악 할 수 있습니다",
-          "만약 체크아웃 날짜보다 일찍 퇴실 처리할 경우 예약 중복 처리된 방은 다시 예약할 수 있도록 처리됩니다"
-        ],
-        images: [
-          "/image/projectimage/payment_1.png",
-          "/image/projectimage/payment_2.png",
-          "/image/projectimage/payment_3.png",
-          "/image/projectimage/payment_4.png",
-          "/image/projectimage/payment_5.png",
-          "/image/projectimage/payment_6.png"
-        ]
-      },
-      reviews: {
-        title: "리뷰",
-        customer: {
-          features: [
-            "퇴실 완료처리된 예약에 한해 고객은 별점 평가과 리뷰 작성이 가능합니다",
-            "작성된 평가와 리뷰는 숙소 상세페이지 및 메인페이지 숙소 리스트에서 확인이 가능합니다",
-            "작성된 리뷰를 관리자가 삭제할 수 있습니다"
-          ],
-          images: [
-            "/image/projectimage/review_customer_1.png",
-            "/image/projectimage/review_customer_2.png"
-          ]
-        }
-      },
-      adminMode: {
-        title: "관리자 모드",
-        statistics: {
-          features: [
-            "관리자는 전반적인 일별, 월별, 연도별 매출을 그래프로 확인할 수 있습니다",
-            "관리자는 모든 숙소의 등록. 삭제, 호스트 추천숙소 등록이 가능하도록 하였습니다",
-            "숙소는 경상북도라는 일정 지역의 주소지만 등록이 가능하게 구성하였습니다",
-            "청소부를 선별하는 서류를 첨부받고 관리할 수 있으며 청소부 배정을 관리자가 실행 할 수 있습니다"
-          ],
-          images: [
-            "/image/projectimage/admin_stats_1.png",
-            "/image/projectimage/admin_stats_2.png",
-            "/image/projectimage/admin_stats_3.png",
-            "/image/projectimage/admin_stats_4.png"
-          ]
-        }
-      }
-    },
     troubleshooting: {
       title: "예약 날짜 저장 / 동일 기간 예약 중복 처리",
       problem: "초반기에 예약테이블의 체크인 - 체크아웃 날짜로만 예약 관련 서비스 로직을 처리했습니다. 이는 동일한 기간에 예약된 객실을 중복체크할 때 문제가 되었습니다. 객실이 예약 기간에 대해 중복될 경우의 수는 4가지가 있어서 모든 경우의 수를 체크하기 어려웠습니다.",
@@ -480,20 +549,7 @@ export const projects = {
         "[예약된 체크인] (예약할 체크인) (예약할 체크아웃) [예약된 체크아웃]"
       ],
       solution: "객실 번호 - 예약 날짜를 저장하는 RESERVED 테이블을 만들었고 객실을 예약할 때는 예약된 날짜 하루하루를 저장할 수 있도록 하여 간단하게 BETWEEN을 이용해 중복 여부를 확인할 수 있도록 했습니다.",
-      result: "1월 1일 ~ 1월 3일 예약할 시 테이블에 check in, check out날짜를 집어 넣으면 스크립트에서 1~3일까지의 날짜를 flatpickr 달력에 선택 불가 날짜로 표시했습니다.",
-      images: [
-        "/image/projectimage/troubleshooting_1.png",
-        "/image/projectimage/troubleshooting_2.png"
-      ]
-    },
-    databaseDesign: {
-      description: "Urban Village 서비스 운영을 위한 데이터베이스의 구조를 만드는 역할입니다.",
-      features: [
-        "핵심 정보 저장 테이블: 사용자 관련(회원, 관리자, 청소 담당자), 숙소 관련(숙소 정보, 객실 정보), 예약 및 거래 관련(예약, 결제, 찜 목록), 기타(리뷰, 쿠폰)",
-        "자동 번호 생성 (시퀀스): 숙소, 찜 목록, 리뷰 등에 새로운 데이터가 추가될 때마다 자동으로 고유한 번호를 매겨주는 기능",
-        "자동 실행 기능 (트리거): 데이터가 입력되거나 수정될 때 특정 작업(ID 자동 부여, 수정 날짜 갱신)이 자동으로 실행",
-        "데이터 조회 편의 기능 (뷰): 결제 데이터를 기반으로 일별, 월별, 연도별 매출 정보를 쉽게 조회할 수 있도록 미리 정의된 조회 방식 제공"
-      ]
+      result: "1월 1일 ~ 1월 3일 예약할 시 테이블에 check in, check out날짜를 집어 넣으면 스크립트에서 1~3일까지의 날짜를 flatpickr 달력에 선택 불가 날짜로 표시했습니다."
     },
     apis: [
       "구글 API - OAuth 2.0을 통한 소셜 로그인",
@@ -519,13 +575,13 @@ export const projects = {
     description: "React를 활용하여 개발한 개인 포트폴리오 웹사이트로, 모던한 UI/UX와 반응형 디자인을 통해 개발자로서의 역량과 프로젝트들을 효과적으로 소개하는 Single Page Application입니다.",
     skills: ["React", "JavaScript", "HTML", "CSS", "React Router", "Node.js", "Git", "GitHub", "Netlify", "Responsive Design"],
     videoUrl: null,
-    thumbnail: "/image/projectimage/4_1.png",
+    thumbnail: "/image/projectimage/3_1.png",
     images: [
-      "/image/projectimage/4_1.png",
-      "/image/projectimage/4_2.png", 
-      "/image/projectimage/4_3.png",
-      "/image/projectimage/4_4.png",
-      "/image/projectimage/4_5.png"
+      "/image/projectimage/3_1.png",
+      "/image/projectimage/3_2.png", 
+      "/image/projectimage/3_3.png",
+      "/image/projectimage/3_4.png",
+      "/image/projectimage/3_5.png"
     ],
     background: [
       "개발자 브랜딩: 개발자로서의 정체성을 명확히 하고 전문성을 어필할 수 있는 온라인 포트폴리오의 필요성을 느꼈습니다.",
@@ -574,17 +630,48 @@ export const projects = {
   },
 
   4: {
-    title: "ABC ShoppingMall 프로젝트",
+    title: "ABC ShoppingMall",
     period: "2025.02.03 ~ 13",
-    notionLink: "https://www.notion.so/프로젝트1-링크-여기에-추가",
+    notionLink: "https://github.com/ABC-ShoppingMall",
     description: "Java와 JavaFX SceneBuilder를 활용하여 개발한 데스크톱 쇼핑몰 애플리케이션으로, 사용자가 상품을 장바구니에 담고 쿠폰을 사용하여 결제하고 배송을 조회할 수 있는 완전한 쇼핑몰 시스템을 구현했습니다.",
     skills: ["Java", "JavaFX Scene Builder", "Oracle", "Eclipse", "JDK 17", "JDBC", "SQL"],
     videoUrl: "https://www.youtube.com/embed/AosiUaQ-lYo",
-    thumbnail: "/image/projectimage/1_1.png",
+    thumbnail: "/image/4_1.png",
     images: [
-      "https://github.com/user-attachments/assets/4ece5030-7e11-4a7b-914e-fb61e7c9f6b1",
-      "https://github.com/user-attachments/assets/db937b89-0cb0-49b5-8f19-b74ecf4f70e2"
+      "/image/projectimage/4_1.png",
+      "/image/projectimage/4_2.png", 
+      "/image/projectimage/4_3.png",
+      "/image/projectimage/4_4.png",
+      "/image/projectimage/4_5.png",
+      "/image/projectimage/4_6.png"
     ],
+    projectOverview: {
+      projectName: "ABC ShoppingMall",
+      developmentPeriod: "2025.03.3 ~ 2025.03.13",
+      developmentTeam: 3,
+      projectType: "의류 및 악세사리 판매 쇼핑몰",
+      gitRepository: "https://github.com/ABC-ShoppingMall"
+    },
+    projectStructure: {
+      title: "프로젝트 주요 구조",
+      description: "ABCShopping Mall 프로젝트는 다음과 같은 구조로 구성되어 있습니다.",
+      structure: [
+        "category - 상품 카테고리 관련",
+        "member - 회원관리 기능", 
+        "login - API 로그인(구글 등)",
+        "pay - 결제 관리자 기능",
+        "delivery - 배송번호로 배송 조회",
+        "question - Q & A 기능",
+        "common - 공통 기능",
+        "resource - 리소스 관리",
+        "fxml - Scene Builder UI"
+      ]
+    },
+    storyboard: {
+      title: "스토리보드",
+      description: "ABC Shopping 스토리 보드",
+      flow: "main → Main → abcShopping Mall → category → member → login → question → delivery → pay → Class → package → common → resource → fxml (모든 패키지가 참조하는 패키지)"
+    },
     background: [
       "배운것의 활용 목적: 로그인, 장바구니, 정보의 저장과 업데이트 등에 관한 것을 자바언어와 SQL로 코드로 짜는것을 확실히 이해하고 활용하고자 했습니다.",
       "자주 이용하는 사이트에 대한 궁금증: 평소 자주 접속하는 사이트가 어떻게 구성되는지 어떤 방식으로 작동 되는지가 궁금해져 쇼핑몰을 만들기로 했습니다.",
@@ -623,6 +710,76 @@ export const projects = {
       "데이터베이스": [
         "Oracle Database - 관계형 데이터베이스 시스템",
         "JDBC - Java 데이터베이스 연결 API"
+      ],
+      "개발 도구": [
+        "Eclipse - 통합 개발 환경",
+        "JDK 17 - Java 개발 키트"
+      ]
+    },
+    technologyUsage: {
+      backend: {
+        role: "사용자에게는 보이지 않는 서버 쪽에서 작동하는 핵심 로직 부분입니다. 프론트엔드로부터 전달받은 요청을 처리하고, 데이터베이스와 연동하여 데이터를 관리하며, 비즈니스 규칙에 따라 필요한 연산이나 작업을 수행합니다.",
+        abcShoppingRole: "회원 가입 및 로그인/로그아웃 처리 등과 같은 회원 관리와 물건을 등록하고 재고 관리 등과 같은 관리자 기능을 수행합니다."
+      },
+      database: {
+        role: "프로그램 운영에 필요한 모든 데이터를 영구적으로 저장하고 관리하는 시스템입니다. 사용자의 정보, 서비스 운영에 필요한 콘텐츠(구매, 쿠폰 등), 사용자의 활동 기록(배송조회) 등이 안전하게 보관되며, 백엔드 애플리케이션은 DB에 접근하여 데이터를 읽거나 씁니다."
+      },
+      frontend: {
+        role: "사용자가 웹 브라우저나 모바일 앱 화면을 통해 직접 보고 상호작용하는 부분입니다. 사용자 인터페이스(UI)를 구축하고 사용자 경험(UX)을 디자인하며, 사용자의 입력이나 동작을 감지하여 백엔드에 요청을 보내는 역할을 합니다.",
+        abcShoppingRole: "Scene Builder를 이용하여 사용자가 직관적으로 쇼핑을 하고 구매를 할 수 있도록 흰색, 검정색을 사용하여 상품의 색상이 더욱 돋보일 수 있도록 하였고 구매 버튼, 회원탈퇴 등 사용자에게 강조하며 전달해야 할 정보에는 강한 색감을 사용하는 전략적 디자인을 구성했습니다."
+      }
+    },
+    mainFeatures: {
+      shopping: {
+        title: "쇼핑기능",
+        features: [
+          "카테고리별 상품 분류 및 브라우징",
+          "장바구니 추가/제거/수량 조절",
+          "쿠폰 적용을 통한 할인 혜택",
+          "결제 프로세스 완료까지 전체 쇼핑 플로우"
+        ]
+      },
+      memberManagement: {
+        title: "회원기능",
+        features: [
+          "회원가입 및 로그인 시스템",
+          "회원정보 수정 및 관리",
+          "주문 내역 조회",
+          "개인정보 보안 처리"
+        ]
+      },
+      orderAndDelivery: {
+        title: "상품 구매 및 배송조회",
+        features: [
+          "주문 완료 후 주문번호 발급",
+          "배송번호를 통한 실시간 배송 상태 확인",
+          "주문 상세 정보 조회",
+          "배송 완료 알림 시스템"
+        ]
+      }
+    },
+    keyTechnicalFeatures: [
+      {
+        title: "JavaFX Scene Builder를 활용한 UI 설계",
+        description: "시각적 레이아웃 도구인 Scene Builder를 활용하여 직관적이고 사용자 친화적인 쇼핑몰 인터페이스를 설계했습니다. FXML을 통한 선언적 UI 구성으로 코드와 디자인을 분리하여 유지보수성을 높였습니다."
+      },
+      {
+        title: "Oracle 데이터베이스 연동",
+        description: "JDBC를 활용하여 Oracle 데이터베이스와의 안정적인 연결을 구현했습니다. 상품 정보, 회원 데이터, 주문 내역 등 복잡한 데이터 관계를 효율적으로 관리하고 조회할 수 있는 시스템을 구축했습니다."
+      },
+      {
+        title: "쇼핑카트 및 결제 시스템",
+        description: "사용자가 상품을 장바구니에 담고, 수량을 조절하며, 쿠폰을 적용하여 최종 결제까지 완료할 수 있는 전체적인 쇼핑 플로우를 구현했습니다. 실시간 가격 계산과 재고 관리 기능을 포함합니다."
+      }
+    ],
+    databaseDesign: {
+      description: "이 SQL 코드는 쇼핑몰 시스템이 원활하게 데이터를 저장하고 관리하며, 필요한 정보를 효율적으로 조회할 수 있도록 데이터베이스의 기본적인 설계와 자동화 기능을 정의한 것입니다.",
+      features: [
+        "고객 주문 및 상품 정보 체계적 관리",
+        "회원 정보 및 인증 시스템",
+        "재고 관리 및 상품 카테고리 분류",
+        "결제 및 배송 추적 시스템",
+        "쿠폰 및 할인 혜택 관리"
       ]
     },
     teamMembers: [
