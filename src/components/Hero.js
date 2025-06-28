@@ -78,7 +78,7 @@ function Hero() {
             <h1 className="hero-main-title">
               안녕하세요! <span className="emoji"></span><br />
               <span className="hero-highlight">웹 개발자</span><br />
-              서하나입니다 <span className="emoji">✨</span>
+              서하나입니다 <span className="emoji"></span>
             </h1>
             <p className="hero-main-description">
               아이들과 함께했던 따뜻한 마음으로<br />
@@ -106,7 +106,7 @@ function Hero() {
                 }}
               />
               <div className="hero-placeholder-image" style={{display: 'none'}}>
-                👩‍💻 Profile Photo
+                 Profile Photo
               </div>
               <img 
                 src="/image/real-profile.jpg"

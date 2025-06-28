@@ -124,7 +124,7 @@
 }
 
 .hero-btn-secondary {
-  background: rgba(255, 255, 255, 0.9);
+  background: #ffd700;
   color: #2d3748;
   border-color: rgba(255, 215, 0, 0.3);
   backdrop-filter: blur(10px);
@@ -738,6 +738,7 @@
   .hero-btn-primary, .hero-btn-secondary {
     width: 100%;
     max-width: 280px;
+    
   }
 
   .hero-profile-image, .hero-placeholder-image, .hero-real-profile-image {

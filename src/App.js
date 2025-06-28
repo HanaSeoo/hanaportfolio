@@ -3,9 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './pages/Home';
-import ProjectDetail from './pages/ProjectDetail';
+
 import MySkills from './pages/MySkills';
 import ScrollToTop from './components/ScrollToTop';
+import MogatshooProjectPage from './pages/MogatshooProjectPage';
+import UrbanVillageProjectPage from './pages/UrbanVillageProjectPage';
+import PortfolioProjectPage from './pages/PortfolioProjectPage';
+import ABCMallProjectPage from './pages/ABCMallProjectPage';
 
 function App() {
   return (
@@ -15,7 +19,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/project/mogatshoo" element={<MogatshooProjectPage />} />
+          <Route path="/project/urbanVillage" element={<UrbanVillageProjectPage />} />
+          <Route path="/project/portfolio" element={<PortfolioProjectPage />} />
+          <Route path="/project/abcShopping" element={<ABCMallProjectPage />} />
           <Route path="/skills" element={<MySkills />} />
         </Routes>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { projects } from '../data/ProjectData';
+
 
 function Projects() {
   return (
@@ -9,13 +9,9 @@ function Projects() {
         <h2>주요 프로젝트</h2>
         <div className="projects-grid">
           {/* 1 번째 프로젝트 */}
-          <Link to="/project/1" className="project-card">
+          <Link to="/project/mogatshoo" className="project-card">
             <div className="project-image">
-              {projects[1]?.thumbnail ? (
-                <img src={projects[1].thumbnail} alt="탈모인 프로젝트" />
-              ) : (
-                <div className="placeholder-project-image">이미지 준비중</div>
-              )}
+              <img src="/image/mogatshoo.png" alt="쇼핑몰 웹 프로젝트" />
             </div>
             <div className="project-info">
               <h3>탈모인들을 위한한 웹 프로젝트</h3>
@@ -29,13 +25,9 @@ function Projects() {
           </Link>
           
           {/* 2 번째 프로젝트 */}
-          <Link to="/project/2" className="project-card">
+          <Link to="/project/urbanVillage" className="project-card">
             <div className="project-image">
-              {projects[2]?.thumbnail ? (
-                <img src={projects[2].thumbnail} alt="숙소 예약 시스템" />
-              ) : (
-                <div className="placeholder-project-image">이미지 준비중</div>
-              )}
+              <img src="/image/mogatshoo.png" alt="쇼핑몰 웹 프로젝트" />
             </div>
             <div className="project-info">
               <h3>숙소 예약 시스템</h3>
@@ -49,13 +41,9 @@ function Projects() {
           
 
           {/* 3 번째 프로젝트 */}
-<Link to="/project/3" className="project-card">
+<Link to="/project/portfolio" className="project-card">
   <div className="project-image">
-    {projects[3]?.thumbnail ? (
-      <img src={projects[3].thumbnail} alt="개인 포트폴리오 웹사이트" />
-    ) : (
-      <div className="placeholder-project-image">이미지 준비중</div>
-    )}
+    <img src="/image/mogatshoo.png" alt="쇼핑몰 웹 프로젝트" />
   </div>
   <div className="project-info">
     <h3>개인 포트폴리오 웹사이트</h3>
@@ -69,13 +57,9 @@ function Projects() {
   </div>
 </Link>
           {/* 4 번째 프로젝트 */}
-          <Link to="/project/4" className="project-card">
+          <Link to="/project/abcShopping" className="project-card">
             <div className="project-image">
-              {projects[4]?.thumbnail ? (
-                <img src={projects[4].thumbnail} alt="쇼핑몰 웹 프로젝트" />
-              ) : (
-                <div className="placeholder-project-image">이미지 준비중</div>
-              )}
+              <img src="/image/mogatshoo.png" alt="쇼핑몰 웹 프로젝트" />
             </div>
             <div className="project-info">
               <h3>쇼핑몰 웹 프로젝트</h3>

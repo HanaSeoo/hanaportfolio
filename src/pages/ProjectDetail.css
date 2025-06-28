@@ -1,83 +1,109 @@
-/* ProjectDetail.css - 새로운 데이터 구조 반영 */
+/* ProjectDetail.css - 깔끔하고 심플한 디자인 */
 
-.project-detail {
-  min-height: 100vh;
-  padding: 2rem 0;
-  background-color: #f8f9fa;
+/* 기본 설정 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.project-detail .container {
+.project-detail-page {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 2rem;
 }
 
-.project-detail .back-button {
-  display: inline-block;
-  margin-bottom: 2rem;
-  padding: 0.5rem 1rem;
-  background-color: #ffd700;
-  color: #1a1a1a;
+/* 뒤로가기 버튼 */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #2563eb;
+  color: white;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
 }
 
-.project-detail .back-button:hover {
-  background-color: #e6c200;
+.back-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
 }
 
-.project-detail .project-header {
+/* 프로젝트 헤더 */
+.project-header {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem 2rem;
   text-align: center;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid #ffd700;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f3f4f6;
 }
 
-.project-detail .project-header h1 {
+.mainimage {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-header h1 {
   font-size: 2.5rem;
-  color: #1a1a1a;
-  margin-bottom: 0.5rem;
-  margin-top: 80px;
-}
-
-.project-detail .project-period {
-  font-size: 1.2rem;
-  color: #666666;
+  font-weight: 700;
+  color: #111827;
   margin-bottom: 1rem;
 }
 
-.project-detail .project-description {
+.project-period {
   font-size: 1.1rem;
-  line-height: 1.6;
-  color: #1a1a1a;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  color: #374151;
   max-width: 800px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
 }
 
 /* 프로젝트 액션 버튼 */
-.project-detail .project-actions {
+.project-actions {
   margin-top: 2rem;
 }
 
-.project-detail .notion-link-btn {
+.notion-link-btn {
   display: inline-block;
-  background-color: #ffd700;
-  color: #1a1a1a;
+  background: #2563eb;
+  color: white;
   padding: 1rem 2rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
-.project-detail .notion-link-btn:hover {
-  background-color: #ffed4e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+.notion-link-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
 }
 
 /* 비디오 섹션 */
@@ -86,20 +112,22 @@
 }
 
 .project-video h3 {
-  margin-bottom: 1rem;
-  color: #1a1a1a;
+  font-size: 1.4rem;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
 }
 
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding-bottom: 56.25%; /* 16:9 비율 */
-  height: 0;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .video-container iframe {
@@ -108,75 +136,80 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border: none;
 }
 
-/* 섹션 기본 스타일 */
-.project-detail section {
-  margin-bottom: 3rem;
+/* 공통 섹션 스타일 */
+section {
   background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f3f4f6;
 }
 
-.project-detail section h2 {
-  color: #1a1a1a;
-  margin-bottom: 1.5rem;
+section h2 {
   font-size: 1.8rem;
-  border-bottom: 2px solid #ffd700;
-  padding-bottom: 0.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #2563eb;
 }
 
-.project-detail section h3 {
-  color: #1a1a1a;
-  margin-bottom: 1rem;
+section h3 {
   font-size: 1.4rem;
-  margin-top: 1.5rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 1.5rem 0 1rem 0;
 }
 
-.project-detail section h4 {
-  color: #1a1a1a;
-  margin-bottom: 0.8rem;
+section h4 {
   font-size: 1.2rem;
-  margin-top: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 1rem 0 0.5rem 0;
 }
 
-.project-detail section h5 {
-  color: #1a1a1a;
-  margin-bottom: 0.6rem;
+section h5 {
   font-size: 1.1rem;
-  margin-top: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+  margin: 0.8rem 0 0.5rem 0;
 }
 
 /* 프로젝트 개요 */
 .project-overview {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: #fefce8;
+  border: 1px solid #fde047;
 }
 
 .overview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .overview-item {
-  padding: 1rem;
   background: white;
+  padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #ffd700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .overview-item strong {
-  color: #1a1a1a;
   display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .overview-item a {
-  color: #007bff;
+  color: #2563eb;
   text-decoration: none;
   word-break: break-all;
 }
@@ -187,436 +220,269 @@
 
 /* 기술 스택 */
 .tech-stack {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: #f0f9ff;
+  border: 1px solid #7dd3fc;
 }
 
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 0.8rem;
 }
 
 .skill-tag {
-  background-color: #ffd700;
-  color: #1a1a1a;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  background: white;
+  color: #0ea5e9;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
+  border: 1px solid #0ea5e9;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: #0ea5e9;
+  color: white;
 }
 
 /* 기술 스택 상세 */
 .tech-stack-detail {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: #f0fdf4;
+  border: 1px solid #86efac;
 }
 
 .tech-category {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   padding: 1.5rem;
   background: white;
-  border-radius: 10px;
-  border-left: 4px solid #ffd700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+ 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .tech-category h3 {
-  color: #1a1a1a;
-  margin-bottom: 1rem;
+  color: #10b981;
   font-size: 1.3rem;
-  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .tech-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .tech-list li {
-  padding: 0.8rem;
-  background: #f8f9fa;
+  background: #f9fafb;
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
   border-radius: 6px;
-  border-left: 3px solid #ffd700;
+
   font-size: 0.95rem;
-  line-height: 1.4;
-  margin: 0.3rem 0;
-  color: #1a1a1a;
 }
 
-/* 프로젝트 목표 */
-.project-goals {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+/* 프로젝트 배경, 목표, 기능 */
+.project-background,
+.project-goals,
+.project-features {
+  background: #fef7ff;
+  border: 1px solid #e879f9;
 }
 
-.project-goals ul,
 .project-background ul,
+.project-goals ul,
 .project-features ul {
   list-style: none;
-  padding: 0;
 }
 
-.project-goals li,
 .project-background li,
+.project-goals li,
 .project-features li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #e9ecef;
-  line-height: 1.6;
-  color: #1a1a1a;
+  background: white;
+  padding: 1rem 1.5rem;
+  margin: 0.8rem 0;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding-left: 2.5rem;
 }
 
-.project-goals li:before,
-.project-background li:before,
-.project-features li:before {
-  content: "▶ ";
-  color: #ffd700;
+.project-background li::before,
+.project-goals li::before,
+.project-features li::before {
+  content: "•";
+  position: absolute;
+  left: 1rem;
+  color: #e879f9;
   font-weight: bold;
-  margin-right: 0.5rem;
-}
-
-.project-goals li:last-child,
-.project-background li:last-child,
-.project-features li:last-child {
-  border-bottom: none;
+  font-size: 1.2rem;
 }
 
 /* 주요 기능 상세 */
 .main-features {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
 }
 
 .feature-section {
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
 }
 
 .feature-section h3 {
-  color: #1a1a1a;
-  margin-bottom: 1.5rem;
+  color: #ea580c;
   font-size: 1.4rem;
-  border-bottom: 2px solid #ffd700;
+  margin-bottom: 1rem;
   padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ea580c;
 }
 
 .feature-description {
-  font-style: italic;
-  color: #666666;
+  background: #f0f9ff;
+  padding: 1.2rem;
+  border-radius: 8px;
   margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-left: 4px solid #ffd700;
-  border-radius: 0 8px 8px 0;
+  font-style: italic;
   line-height: 1.6;
+ 
+}
+
+.sub-feature {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+ 
+}
+
+.sub-feature h4 {
+  color: #6366f1;
+  margin-bottom: 1rem;
 }
 
 .feature-details {
+  background: #f0fdf4;
+  border-radius: 8px;
+  padding: 1.5rem;
   margin-top: 1.5rem;
+
 }
 
 .feature-details h4,
 .feature-details h5 {
-  color: #1a1a1a;
+  color: #10b981;
   margin-bottom: 1rem;
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.sub-feature {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border-left: 3px solid #ffd700;
-}
-
-.sub-feature h4 {
-  color: #1a1a1a;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
 }
 
 .calculations {
+  background: #fefce8;
+  border-radius: 8px;
+  padding: 1rem;
   margin-top: 1rem;
-  padding: 0.8rem;
-  background: #fff;
-  border-radius: 6px;
 }
 
 .feature-section ul,
 .sub-feature ul,
+.feature-details ul,
 .calculations ul {
   list-style: none;
-  padding: 0;
-  margin: 1rem 0;
 }
 
 .feature-section li,
 .sub-feature li,
+.feature-details li,
 .calculations li {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #e9ecef;
-  line-height: 1.6;
-  color: #1a1a1a;
-}
-
-.feature-section li:before,
-.sub-feature li:before,
-.calculations li:before {
-  content: "▶ ";
-  color: #ffd700;
-  font-weight: bold;
-  margin-right: 0.5rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  position: relative;
+  padding-left: 1.5rem;
 }
 
 .feature-section li:last-child,
 .sub-feature li:last-child,
+.feature-details li:last-child,
 .calculations li:last-child {
   border-bottom: none;
 }
 
-/* 핵심 기술 특징 */
-.key-technical-features {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-}
-
-.technical-feature {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 10px;
-  border-left: 4px solid #ffd700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.technical-feature h3 {
-  color: #1a1a1a;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.technical-feature p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
+.feature-section li::before,
+.sub-feature li::before,
+.feature-details li::before,
+.calculations li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6b7280;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /* 기술 사용처 */
 .technology-usage {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: #ecfdf5;
+  border: 1px solid #86efac;
 }
 
 .usage-category {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   padding: 1.5rem;
   background: white;
-  border-radius: 10px;
-  border-left: 4px solid #ffd700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .usage-category h3 {
-  color: #1a1a1a;
+  color: #10b981;
   margin-bottom: 1rem;
-  font-size: 1.3rem;
 }
 
-.usage-category p {
-  margin-bottom: 0.8rem;
-  line-height: 1.6;
+/* 프로젝트 키워드 */
+.key-technical-features {
+  background: #fdf2f8;
+  border: 1px solid #f9a8d4;
 }
 
-/* 트러블슈팅 */
-.troubleshooting-section {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-}
-
-.troubleshooting-content {
-  padding: 1rem;
-}
-
-.troubleshooting-problem,
-.troubleshooting-solution,
-.troubleshooting-result {
-  margin-bottom: 2rem;
+.technical-feature {
+  margin-bottom: 1.5rem;
   padding: 1.5rem;
   background: white;
-  border-radius: 10px;
-  border-left: 4px solid #ffd700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.troubleshooting-problem h4,
-.troubleshooting-solution h4,
-.troubleshooting-result h4 {
-  color: #1a1a1a;
+.technical-feature h3 {
+  color: #ec4899;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.cases-description {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-}
-
-.cases-description h5 {
-  color: #1a1a1a;
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
-}
-
-.cases-description ol {
-  margin-top: 0.5rem;
-  padding-left: 1.5rem;
-}
-
-.cases-description li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
-  font-family: monospace;
-  background: white;
-  padding: 0.5rem;
-  border-radius: 4px;
-  border-left: 3px solid #ffd700;
-}
-
-/* 프로젝트 이미지 */
-.project-images {
-  margin: 1.5rem 0;
-}
-
-.images-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.images-grid img {
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  margin: 0 auto;
-  display: block;
-  cursor: pointer;
-}
-
-.images-grid img:hover {
-  transform: scale(1.02);
-}
-
-/* 이미지 모달 */
-.image-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.modal-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  cursor: default;
-}
-
-.modal-image {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: 90vh;
-  border-radius: 10px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-}
-
-.close-button {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  font-size: 30px;
-  color: #ffd700;
-  cursor: pointer;
-  font-weight: bold;
-  background: rgba(0, 0, 0, 0.5);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
-}
-
-.close-button:hover {
-  background: rgba(255, 215, 0, 0.2);
-}
-
-/* 시스템 구조 */
-.architecture-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.architecture-item {
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border-radius: 8px;
-  border-left: 3px solid #ffd700;
-}
-
-.architecture-item strong {
-  color: #1a1a1a;
 }
 
 /* API 섹션 */
 .apis-section {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
 }
 
 .api-list {
-  list-style: none;
-  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
+  list-style: none;
 }
 
 .api-list li {
-  padding: 1.2rem;
   background: white;
+  padding: 1.2rem;
   border-radius: 8px;
-  border-left: 4px solid #ffd700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  transition: transform 0.3s ease;
-}
-
-.api-list li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* 팀 멤버 */
 .team-members {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: #eff6ff;
+  border: 1px solid #93c5fd;
 }
 
 .members-list {
@@ -626,38 +492,153 @@
 }
 
 .member {
-  background-color: #f8f9fa;
-  padding: 1rem;
+  background: white;
+  padding: 1.5rem;
   border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-left: 4px solid #ffd700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .member-name {
   font-weight: 600;
-  color: #1a1a1a;
+  font-size: 1.1rem;
+  color: #111827;
 }
 
 .member-role {
-  color: #666666;
+  color: #6b7280;
 }
 
 .portfolio-link {
-  color: #ffd700;
-  text-decoration: none;
-  font-weight: 500;
   margin-left: auto;
-  padding: 0.3rem 0.8rem;
-  background: rgba(255, 215, 0, 0.1);
-  border-radius: 4px;
+  background: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
 }
 
 .portfolio-link:hover {
-  background: rgba(255, 215, 0, 0.2);
-  text-decoration: none;
+  background: #2563eb;
+}
+
+/* 트러블슈팅 */
+.troubleshooting-section {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+}
+
+.troubleshooting-content h3 {
+  color: #dc2626;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.troubleshooting-problem,
+.troubleshooting-solution,
+.troubleshooting-result {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.troubleshooting-problem h4 {
+  color: #dc2626;
+}
+
+.troubleshooting-solution h4 {
+  color: #f59e0b;
+}
+
+.troubleshooting-result h4 {
+  color: #10b981;
+}
+
+.cases-description {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.cases-description ol {
+  padding-left: 1.5rem;
+}
+
+.cases-description li {
+  background: white;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* 시스템 구조 */
+.project-architecture {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+}
+
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.architecture-item {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.architecture-item strong {
+  color: #10b981;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* 데이터베이스 설계 */
+.database-design {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+}
+
+.database-features h3 {
+  color: #ea580c;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.database-features ul {
+  list-style: none;
+}
+
+.database-features li {
+  background: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  position: relative;
+  padding-left: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.database-features li::before {
+  content: "•";
+  position: absolute;
+  left: 0.7rem;
+  color: #ea580c;
+  font-weight: bold;
 }
 
 /* 도전과제와 성과 */
@@ -667,137 +648,195 @@
   gap: 2rem;
 }
 
-.challenges,
+.challenges {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
 .outcome {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 3px solid #ffd700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 12px;
+  padding: 2rem;
 }
 
 .challenges h2,
 .outcome h2 {
-  margin-bottom: 1rem;
   font-size: 1.4rem;
+  margin-bottom: 1rem;
   border: none;
   padding: 0;
-  color: #1a1a1a;
 }
 
-.challenges p,
-.outcome p {
-  line-height: 1.6;
-  color: #1a1a1a;
+.challenges h2 {
+  color: #dc2626;
+}
+
+.outcome h2 {
+  color: #10b981;
+}
+
+/* 프로젝트 이미지 */
+.project-images {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.images-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.images-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 이미지 모달 */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  cursor: default;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: white;
+  transform: scale(1.1);
 }
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
-  .project-detail .container {
-    padding: 0 1rem;
+  .container {
+    padding: 1rem;
   }
-  
-  .project-detail .project-header h1 {
+
+  .project-header {
+    padding: 2rem 1.5rem;
+  }
+
+  .project-header h1 {
     font-size: 2rem;
-    margin-top: 60px;
   }
-  
+
+  .mainimage {
+    max-width: 100%;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
   .challenges-outcome {
     grid-template-columns: 1fr;
   }
-  
+
+  .overview-grid,
   .architecture-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .overview-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .members-list {
-    flex-direction: column;
-  }
-  
-  .member {
-    min-width: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  
-  .portfolio-link {
-    margin-left: 0;
-    align-self: flex-end;
-  }
-  
-  .images-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .images-grid img {
-    max-width: 100%;
-  }
-  
-  .feature-section {
-    padding: 1.5rem;
-  }
-  
-  .technical-feature,
-  .usage-category,
-  .troubleshooting-problem,
-  .troubleshooting-solution,
-  .troubleshooting-result {
-    padding: 1rem;
-  }
-
-  .video-container {
-    padding-bottom: 56.25%;
-  }
-
-  .project-detail section {
-    padding: 1.5rem;
-  }
-
-  .project-detail section h2 {
-    font-size: 1.6rem;
-  }
-
-  .project-detail section h3 {
-    font-size: 1.3rem;
-  }
-
-  .project-detail section h4 {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-detail .project-header h1 {
-    font-size: 1.8rem;
-  }
-  
-  .project-detail .project-description {
-    font-size: 1rem;
-  }
-
-  .skill-tag {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .project-detail section {
-    padding: 1rem;
-  }
-
-  .feature-section,
-  .technical-feature,
-  .usage-category,
-  .sub-feature {
-    padding: 1rem;
   }
 
   .api-list {
     grid-template-columns: 1fr;
+  }
+
+  .images-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .member {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .portfolio-link {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .project-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section h3 {
+    font-size: 1.2rem;
   }
 }

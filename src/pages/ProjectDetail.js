@@ -39,6 +39,7 @@ function ProjectDetail() {
         
         {/* 프로젝트 헤더 */}
         <header className="project-header">
+          <img className="mainimage" src={project.mainimage} alt={project.title} />
           <h1>{project.title}</h1>
           <p className="project-period">{project.period}</p>
           <p className="project-description">{project.description}</p>

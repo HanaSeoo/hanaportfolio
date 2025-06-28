@@ -1,7 +1,8 @@
 // src/data/ProjectData.js - PDF 내용 완전 반영 (모든 섹션 포함)
 export const projects = {
   1: {
-    title: "모갔슈 - 탈모인 익명 공감 커뮤니티",
+    mainimage: "/image/mogatshoo.png",
+    title: "모갔슈 - 탈모인 익명 공감 커뮤니티" ,
     period: "2025.05.12 ~ 06.20",
     notionLink: "https://www.notion.so/Project-20ddb822a28e80ef92dfd65b470d78e9",
     description: "모갔슈(毛털모 + 갔슈?_전라도 사투리)는 탈모인들을 위한 익명 기반 공감 커뮤니티 앱으로, AI 기반 이미지 분석을 통해 탈모 상태를 진단하고 맞춤형 정보를 제공하며, 유쾌한 위로와 소통이 가능한 웹+앱 통합 서비스입니다.",
@@ -11,9 +12,9 @@ export const projects = {
       "AWS EC2", "GitHub Actions", "Git", "Gradle", "STS4", "DBeaver"
     ],
     videoUrl: "https://www.youtube.com/embed/JcuWNKhWlmo",
-    thumbnail: "/image/1_1.png",
+    thumbnail: "/image/mogatshoo.png",
     images: [
-      "/image/projectimage/1_1.png",
+      "/image/projectimage/mogatshoo/1-1.png",
       "/image/projectimage/1_2.png", 
       "/image/projectimage/1_3.png",
       "/image/projectimage/1_4.png",
