@@ -44,6 +44,7 @@
 
 /* 프로젝트 헤더 */
 .project-header {
+  margin-top: 100px;
   background: white;
   border-radius: 12px;
   padding: 3rem 2rem;
@@ -642,11 +643,7 @@ section h5 {
 }
 
 /* 도전과제와 성과 */
-.challenges-outcome {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
+
 
 .challenges {
   background: #fef2f2;
@@ -756,6 +753,13 @@ section h5 {
 .close-button:hover {
   background: white;
   transform: scale(1.1);
+}
+
+/*상세 이미지*/
+.detailImage{
+  width: 800px;
+  align-items: center;
+  padding-left: 250px;
 }
 
 /* 반응형 디자인 */

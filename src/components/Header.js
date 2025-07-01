@@ -5,20 +5,35 @@ import { useNavigate } from 'react-router-dom';
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  
   const handleTreeClick = () => {
     navigate('/skills');
   };
+  
   const scrollToSection = (sectionId) => {
     // 현재 홈페이지가 아니면 홈으로 이동 후 스크롤
     if (location.pathname !== '/') {
-      window.location.href = `/#${sectionId}`;
+      navigate('/');
+      // 페이지 이동 후 스크롤 실행을 위해 약간의 지연
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
       return;
     }
     
     // 홈페이지에 있으면 바로 스크롤
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   };
 

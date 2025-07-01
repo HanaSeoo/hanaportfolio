@@ -10,16 +10,15 @@ function PortfolioProjectPage() {
     title: '개인 포트폴리오 웹사이트',
     description: 'React를 활용하여 개발한 개인 포트폴리오 웹사이트로, 모던한 UI/UX와 반응형 디자인을 통해 개발자로서의 역량과 프로젝트들을 효과적으로 소개하는 Single Page Application입니다.',
     period: '2025.06.01 - 06.20',
-    thumbnail: '/image/projectimage/3_1.png',
-    mainimage: '/image/projectimage/3_1.png',
-    notionLink: 'https://www.notion.so/프로젝트1-링크-여기에-추가',
+    mainimage: '/image/profile.png',
+    GitLink: 'https://github.com/HanaSeoo/hanaportfolio',
     videoUrl: null,
     projectOverview: {
       projectName: '개인 포트폴리오 웹사이트',
       developmentPeriod: '2025.06.01 - 06.20',
       developmentTeam: 1,
       projectType: 'Single Page Application (개인 포트폴리오)',
-      notionLink: 'https://www.notion.so/프로젝트1-링크-여기에-추가',
+      GitLink: 'https://github.com/HanaSeoo/hanaportfolio',
     },
     background: [
       '개발자 브랜딩: 개발자로서의 정체성을 명확히 하고 전문성을 어필할 수 있는 온라인 포트폴리오의 필요성을 느꼈습니다.',
@@ -144,7 +143,7 @@ function PortfolioProjectPage() {
       버전관리: 'Git/GitHub를 통한 소스코드 관리',
     },
     teamMembers: [
-      { name: '서하나', role: '풀스택 개발자', portfolio: 'https://www.notion.so/1b9db822a28e801eb04af2f96ab48d5a' },
+      { name: '서하나', role: '풀스택 개발자', portfolio: 'https://github.com/HanaSeoo' },
     ],
     challenges: 'React 초기 학습 곡선 극복, 컴포넌트 간 상태 관리 최적화, 반응형 디자인에서의 일관된 사용자 경험 구현, 이미지 최적화 및 성능 향상, SEO 최적화를 위한 메타데이터 관리, 다양한 브라우저 호환성 확보, 지속적인 콘텐츠 업데이트를 위한 확장 가능한 구조 설계 등 프론트엔드 개발의 전반적인 영역에서 실무 수준의 품질을 달성하는 도전이 있었습니다.',
     outcome: 'React를 활용한 실제 프로젝트 개발 경험을 통해 컴포넌트 기반 개발 역량을 크게 향상시켰고, 모던 JavaScript와 ES6+ 문법에 대한 이해도를 높일 수 있었습니다. 반응형 웹 디자인과 사용자 경험 최적화에 대한 실무 감각을 기를 수 있었으며, Git을 활용한 버전 관리와 Netlify를 통한 배포 경험으로 개발 전 과정에 대한 이해도를 높였습니다.',
@@ -176,40 +175,22 @@ function PortfolioProjectPage() {
   return (
     <div className="project-detail-page">
       <div className="container">
-        <Link to="/" className="back-button">← 홈으로 돌아가기</Link>
-
         {/* 프로젝트 헤더 */}
         <header className="project-header">
-          <img className="mainimage" src={project.mainimage || project.thumbnail} alt={project.title} />
+          <img className="mainimage" src={project.mainimage} alt={project.title} />
           <h1>{project.title}</h1>
           <p className="project-period">{project.period}</p>
           <p className="project-description">{project.description}</p>
 
-          {/* 시연 영상 */}
-          {project.videoUrl && (
-            <div className="project-video">
-              <h3>프로젝트 시연 영상</h3>
-              <div className="video-container">
-                <iframe
-                  src={project.videoUrl}
-                  title={`${project.title} 시연 영상`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          )}
-
           {/* 노션/GitHub 링크 버튼 */}
-          {(project.notionLink || project.gitRepository) && (
+          {(project.GitLink || project.gitRepository) && (
             <div className="project-actions">
-              {project.notionLink && (
-                <a href={project.notionLink} target="_blank" rel="noopener noreferrer" className="notion-link-btn">
-                  상세보기 (Notion)
+              {project.GitLink && (
+                <a href={project.GitLink} target="_blank" rel="noopener noreferrer" className="notion-link-btn">
+                  상세보기 (Git)
                 </a>
               )}
-              {project.gitRepository && !project.notionLink && (
+              {project.gitRepository && !project.GitLink && (
                 <a href={project.gitRepository} target="_blank" rel="noopener noreferrer" className="notion-link-btn">
                   GitHub Repository
                 </a>
@@ -239,14 +220,14 @@ function PortfolioProjectPage() {
           </section>
         )}
 
-        {/* 기술 스택 */}
-        <section className="tech-stack">
-          <h2>사용 기술</h2>
-          <div className="skills-list">
-            {project.skills.map((skill, index) => (
-              <span key={index} className="skill-tag">{skill}</span>
+{/* 프로젝트 배경 */}
+        <section className="project-background">
+          <h2>프로젝트 배경</h2>
+          <ul>
+            {project.background.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
-          </div>
+          </ul>
         </section>
 
         {/* 기술 스택 상세 */}
@@ -270,16 +251,6 @@ function PortfolioProjectPage() {
           </section>
         )}
 
-        {/* 프로젝트 배경 */}
-        <section className="project-background">
-          <h2>프로젝트 배경</h2>
-          <ul>
-            {project.background.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
         {/* 주요 기능 상세 */}
         {project.mainFeatures && (
           <section className="main-features">
@@ -295,16 +266,6 @@ function PortfolioProjectPage() {
           </section>
         )}
 
-        {/* 주요 기능 (간단 목록) */}
-        <section className="project-features">
-          <h2>주요 기능</h2>
-          <ul>
-            {project.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-        </section>
-
         {/* 시스템 구조 */}
         <section className="project-architecture">
           <h2>시스템 구조</h2>
@@ -312,24 +273,6 @@ function PortfolioProjectPage() {
             {Object.entries(project.architecture).map(([key, value]) => (
               <div key={key} className="architecture-item">
                 <strong>{key}:</strong> {value}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 팀 멤버 */}
-        <section className="team-members">
-          <h2>팀 멤버</h2>
-          <div className="members-list">
-            {project.teamMembers.map((member, index) => (
-              <div key={index} className="member">
-                <span className="member-name">{member.name}</span>
-                <span className="member-role">({member.role})</span>
-                {member.portfolio && (
-                  <a href={member.portfolio} target="_blank" rel="noopener noreferrer" className="portfolio-link">
-                    포트폴리오 보기
-                  </a>
-                )}
               </div>
             ))}
           </div>
@@ -346,23 +289,6 @@ function PortfolioProjectPage() {
             <p>{project.outcome}</p>
           </div>
         </section>
-
-        {/* 프로젝트 이미지 */}
-        {project.images && project.images.length > 0 && (
-          <section className="project-images">
-            <h2>프로젝트 이미지</h2>
-            <div className="images-grid">
-              {project.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${project.title} 스크린샷 ${index + 1}`}
-                  onClick={() => openImageModal(image)}
-                />
-              ))}
-            </div>
-          </section>
-        )}
 
         {/* 이미지 모달 */}
         {selectedImage && (

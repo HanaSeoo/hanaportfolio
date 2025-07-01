@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './Hero.css'; // CSS 파일 import
+import './Hero.css';
 
 function Hero() {
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [journeyVisible, setJourneyVisible] = useState(false);
   const [techStackVisible, setTechStackVisible] = useState(false);
 
   const techStacks = {
@@ -28,17 +30,35 @@ function Hero() {
 
   useEffect(() => {
     const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Hero 섹션 애니메이션
+      if (scrollY > 100) {
+        setHeroVisible(true);
+      }
+
+      // Journey 섹션 애니메이션
+      const journeySection = document.getElementById('journey');
+      if (journeySection) {
+        const rect = journeySection.getBoundingClientRect();
+        if (rect.top < windowHeight * 0.8) {
+          setJourneyVisible(true);
+        }
+      }
+
+      // Tech Stack 섹션 애니메이션
       const techStackSection = document.getElementById('hero-tech-stack');
       if (techStackSection) {
         const rect = techStackSection.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const isVisible = rect.top < windowHeight * 0.8;
-        setTechStackVisible(isVisible);
+        if (rect.top < windowHeight * 0.8) {
+          setTechStackVisible(true);
+        }
       }
     };
 
-    // 초기 로드 시 체크
-    setTimeout(handleScroll, 100);
+    // 초기 로드 시 Hero 애니메이션 실행
+    setTimeout(() => setHeroVisible(true), 300);
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -70,7 +90,7 @@ function Hero() {
       {/* Hero Section */}
       <section className="hero-main-section" id="home">
         <div className="hero-main-container">
-          <div className="hero-main-content">
+          <div className={`hero-main-content ${heroVisible ? 'visible' : ''}`}>
             <div className="hero-main-badge">
               <span>👋</span>
               교사에서 개발자로
@@ -94,7 +114,7 @@ function Hero() {
             </div>
           </div>
           
-          <div className="hero-main-image">
+          <div className={`hero-main-image ${heroVisible ? 'visible' : ''}`}>
             <div className="hero-profile-container">
               <img 
                 src="/image/profile.png"
@@ -120,7 +140,7 @@ function Hero() {
             </div>
           </div>
 
-          <div className="hero-dev-stats-card">
+          <div className={`hero-dev-stats-card ${heroVisible ? 'visible' : ''}`}>
             <div className="hero-stats-header">
               <span className="hero-stats-title">개발자 스탯</span>
               <span className="hero-stats-level">Lv.1 Junior</span>
@@ -183,9 +203,11 @@ function Hero() {
       {/* Enhanced Journey Timeline Section */}
       <section className="hero-enhanced-journey-section" id="journey">
         <div className="hero-journey-container">
-          <h2 className="hero-journey-title">나의 개발자 여정 & 프로젝트</h2>
+          <h2 className={`hero-journey-title ${journeyVisible ? 'visible' : ''}`}>
+            나의 개발자 여정 & 프로젝트
+          </h2>
           <div className="hero-enhanced-timeline">
-            <div className="hero-timeline-item" data-type="experience">
+            <div className={`hero-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="experience" style={{animationDelay: '0.2s'}}>
               <div className="hero-timeline-icon">👶</div>
               <div className="hero-timeline-content">
                 <div className="hero-timeline-date">2020 - 2024</div>
@@ -197,7 +219,7 @@ function Hero() {
               </div>
             </div>
             
-            <div className="hero-timeline-item" data-type="learning">
+            <div className={`hero-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="learning" style={{animationDelay: '0.4s'}}>
               <div className="hero-timeline-icon">💡</div>
               <div className="hero-timeline-content">
                 <div className="hero-timeline-date">2024년 하반기</div>
@@ -209,7 +231,7 @@ function Hero() {
               </div>
             </div>
 
-            <div className="hero-timeline-item hero-project-timeline-item" data-type="project" onClick={() => handleProjectClick(4)}>
+            <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '0.6s'}} onClick={() => handleProjectClick(4)}>
               <div className="hero-timeline-icon">☕</div>
               <div className="hero-timeline-content">
                 <div className="hero-timeline-date">2024년 12월</div>
@@ -227,7 +249,7 @@ function Hero() {
               </div>
             </div>
             
-            <div className="hero-timeline-item hero-project-timeline-item" data-type="project" onClick={() => handleProjectClick(2)}>
+            <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '0.8s'}} onClick={() => handleProjectClick(2)}>
               <div className="hero-timeline-icon">🏠</div>
               <div className="hero-timeline-content">
                 <div className="hero-timeline-date">2025년 2월</div>
@@ -244,7 +266,7 @@ function Hero() {
               </div>
             </div>
 
-            <div className="hero-timeline-item hero-project-timeline-item" data-type="project" onClick={() => handleProjectClick(3)}>
+            <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '1.0s'}} onClick={() => handleProjectClick(3)}>
               <div className="hero-timeline-icon">⚛️</div>
               <div className="hero-timeline-content">
                 <div className="hero-timeline-date">2025년 4월</div>
@@ -261,7 +283,7 @@ function Hero() {
               </div>
             </div>
 
-            <div className="hero-timeline-item hero-project-timeline-item" data-type="project" onClick={() => handleProjectClick(1)}>
+            <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '1.2s'}} onClick={() => handleProjectClick(1)}>
               <div className="hero-timeline-icon">💊</div>
               <div className="hero-timeline-content">
                 <div className="hero-timeline-date">2025년 6월</div>
@@ -279,7 +301,7 @@ function Hero() {
               </div>
             </div>
             
-            <div className="hero-timeline-item" data-type="future">
+            <div className={`hero-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="future" style={{animationDelay: '1.4s'}}>
               <div className="hero-timeline-icon">🚀</div>
               <div className="hero-timeline-content">
                 <div className="hero-timeline-date">2025년 현재 & 미래</div>
@@ -324,7 +346,7 @@ function Hero() {
                       style={{
                         backgroundColor: tech.color,
                         color: tech.color === '#F7DF1E' ? '#000' : '#fff',
-                        transitionDelay: `${(categoryIndex * 100 + index * 50)}ms`
+                        transitionDelay: `${(categoryIndex * 100 + index * 50 + 600)}ms`
                       }}
                     >
                       <span>{tech.icon}</span>

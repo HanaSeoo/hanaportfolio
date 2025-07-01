@@ -11,7 +11,7 @@ function Projects() {
           {/* 1 번째 프로젝트 */}
           <Link to="/project/mogatshoo" className="project-card">
             <div className="project-image">
-              <img src="/image/mogatshoo.png" alt="쇼핑몰 웹 프로젝트" />
+              <img src="/image/mogatshoo.png" alt="프로젝트" />
             </div>
             <div className="project-info">
               <h3>탈모인들을 위한한 웹 프로젝트</h3>
@@ -27,7 +27,7 @@ function Projects() {
           {/* 2 번째 프로젝트 */}
           <Link to="/project/urbanVillage" className="project-card">
             <div className="project-image">
-              <img src="/image/mogatshoo.png" alt="쇼핑몰 웹 프로젝트" />
+              <img src="/image/Urban&VillageLogo.png" alt="프로젝트" />
             </div>
             <div className="project-info">
               <h3>숙소 예약 시스템</h3>
@@ -43,7 +43,7 @@ function Projects() {
           {/* 3 번째 프로젝트 */}
 <Link to="/project/portfolio" className="project-card">
   <div className="project-image">
-    <img src="/image/mogatshoo.png" alt="쇼핑몰 웹 프로젝트" />
+    <img src="/image/profile.png" alt="프로젝트" />
   </div>
   <div className="project-info">
     <h3>개인 포트폴리오 웹사이트</h3>
@@ -59,7 +59,7 @@ function Projects() {
           {/* 4 번째 프로젝트 */}
           <Link to="/project/abcShopping" className="project-card">
             <div className="project-image">
-              <img src="/image/mogatshoo.png" alt="쇼핑몰 웹 프로젝트" />
+              <img src="/image/projectImage/abcShopping/3-3.jpg" alt="프로젝트" />
             </div>
             <div className="project-info">
               <h3>쇼핑몰 웹 프로젝트</h3>

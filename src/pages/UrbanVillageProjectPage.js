@@ -10,9 +10,8 @@ function UrbanVillageProjectPage() {
     title: '정부 숙박 플랫폼 Urban_Village',
     description: '숙박 플랫폼 (고객, 사업자/숙소, 관리자 파트 기능 분리)',
     period: '2025.03.31 - 2022.05.25',
-    thumbnail: '/image/projectimage/urbanvillage/urbanvillage_main.png',
-    mainimage: '/image/projectimage/urbanvillage/urbanvillage_main.png',
-    videoUrl: 'https://youtu.be/vfzpYiFC3Rw',
+    mainimage: '/image/Urban&VillageLogo.png',
+    videoUrl: 'https://www.youtube.com/embed/JMxSRmcZiU8?si=m63JhG7mEJt36m0v',
     gitRepository: 'https://github.com/urban-village/Urban-Village',
     projectOverview: {
       projectName: 'Urban Village 숙박 플랫폼',
@@ -31,6 +30,7 @@ function UrbanVillageProjectPage() {
       description: '회원가입부터 숙소 검색, 예약, 관리자 기능까지의 전체적인 서비스 흐름',
     },
     databaseDesign: {
+      detailImage3: '/image/projectImage/urban/2-3.png',
       description: 'Urban Village 서비스 운영을 위한 데이터베이스의 구조를 만드는 역할입니다.',
       features: [
         '핵심 정보 저장 테이블: 사용자 관련(회원, 관리자, 청소 담당자 정보를 분리해서 관리), 숙소 관련(숙소 자체 정보와 각 숙소의 객실 정보를 저장하며, 관리자/청소 담당자와 연결, 사진 경로는 숙소/리뷰 테이블에 직접 저장하는 방식), 예약 및 거래 관련(예약 및 결제 정보, 회원들의 찜 목록을 관리), 기타(리뷰, 쿠폰 정보 등을 저장하는 테이블도 포함)',
@@ -200,16 +200,6 @@ function UrbanVillageProjectPage() {
     },
     challenges: 'Oracle Database와 Spring Framework 연동 과정에서 트랜잭션 처리와 예약 중복 검증 로직 구현이 가장 큰 도전 과제였습니다. 특히, 날짜별 예약 상태를 정확히 관리하고 중복 예약을 방지하는 것이 어려웠습니다.',
     outcome: 'Urban Village 프로젝트를 통해 Spring Boot와 Oracle Database를 활용한 대규모 웹 서비스 개발 경험을 쌓았습니다. 특히, 복잡한 예약 시스템과 결제 연동, 관리자 페이지 구현을 통해 실무 수준의 백엔드 개발 능력을 향상시켰습니다. 팀원들과의 협업을 통해 프로젝트 관리 능력과 의사소통 스킬도 크게 발전시킬 수 있었습니다.',
-    images: [
-      '/image/projectimage/urbanvillage/Urban_Village_UI_1.jpg',
-      '/image/projectimage/urbanvillage/Urban_Village_UI_2.jpg',
-      '/image/projectimage/urbanvillage/Urban_Village_UI_3.jpg',
-      '/image/projectimage/urbanvillage/Urban_Village_UI_4.jpg',
-      '/image/projectimage/urbanvillage/Urban_Village_UI_5.jpg',
-      '/image/projectimage/urbanvillage/Urban_Village_UI_6.jpg',
-      '/image/projectimage/urbanvillage/Urban_Village_UI_7.jpg',
-      '/image/projectimage/urbanvillage/Urban_Village_UI_8.jpg',
-    ],
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -231,7 +221,6 @@ function UrbanVillageProjectPage() {
   return (
     <div className="project-detail-page">
       <div className="container">
-        <Link to="/" className="back-button">← 홈으로 돌아가기</Link>
 
         {/* 프로젝트 헤더 */}
         <header className="project-header">
@@ -293,8 +282,11 @@ function UrbanVillageProjectPage() {
             <h2>프로젝트 구성 및 설계</h2>
             <h3>{project.siteMap.title}</h3>
             <p><strong>{project.siteMap.customerFlow}</strong></p>
+            <img class ="detailImage" src="/image/projectImage/urban/2-1.jpg"></img>
+            <br></br>
+            <br></br>
             <p><strong>{project.siteMap.adminFlow}</strong></p>
-            <p>{project.siteMap.description}</p>
+            <img class ="detailImage" src="/image/projectImage/urban/2-2.jpg"></img>
           </section>
         )}
 
@@ -302,7 +294,7 @@ function UrbanVillageProjectPage() {
         {project.databaseDesign && (
           <section className="database-design">
             <h2>Database ERD</h2>
-            <p>{project.databaseDesign.description}</p>
+            <img class ="detailImage" src="/image/projectImage/urban/2-3.jpg"></img>
             <div className="database-features">
               <h3>1. 핵심 정보 저장 테이블</h3>
               <ul>
@@ -324,20 +316,11 @@ function UrbanVillageProjectPage() {
           </section>
         )}
 
-        {/* 기술 스택 */}
-        <section className="tech-stack">
-          <h2>사용 기술</h2>
-          <div className="skills-list">
-            {project.skills.map((skill, index) => (
-              <span key={index} className="skill-tag">{skill}</span>
-            ))}
-          </div>
-        </section>
-
         {/* 기술 스택 상세 */}
         {project.techStack && (
           <section className="tech-stack-detail">
             <h2>기술 스택 상세</h2>
+            <img class ="detailImage" src="/image/projectImage/urban/2-5.jpg"></img>
             {Object.entries(project.techStack).map(([category, techs]) => (
               <div key={category} className="tech-category">
                 <h3>{category}</h3>
@@ -402,22 +385,11 @@ function UrbanVillageProjectPage() {
           </section>
         )}
 
-        {/* 시스템 구조 */}
-        <section className="project-architecture">
-          <h2>시스템 구조</h2>
-          <div className="architecture-grid">
-            {Object.entries(project.architecture).map(([key, value]) => (
-              <div key={key} className="architecture-item">
-                <strong>{key}:</strong> {value}
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* 트러블슈팅 */}
         {project.troubleshooting && (
           <section className="troubleshooting-section">
             <h2>Troubleshooting</h2>
+            <img class ="detailImage" src="/image/projectImage/urban/2-15.jpg"></img>
             <div className="troubleshooting-content">
               <h3>{project.troubleshooting.title}</h3>
               <div className="troubleshooting-problem">

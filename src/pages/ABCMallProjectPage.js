@@ -10,8 +10,7 @@ function ABCMallProjectPage() {
     title: 'ABC ShoppingMall',
     description: '의류 쇼핑몰 구축 프로젝트',
     period: '2025.03.3 - 2025.03.13',
-    thumbnail: '/image/projectimage/abcmall/abcmall_main.png',
-    mainimage: '/image/projectimage/abcmall/abcmall_main.png',
+    mainimage: '/image/projectimage/abcShopping/3-3.jpg',
     videoUrl: 'https://www.youtube.com/embed/AosiUaQ-lYo',
     gitRepository: 'https://github.com/abc/ABC-ShoppingMall',
     projectOverview: {
@@ -164,14 +163,6 @@ function ABCMallProjectPage() {
     },
     challenges: 'JavaFX를 활용한 데스크톱 애플리케이션 개발이 가장 큰 도전 과제였습니다. 특히, Oracle Database와의 효율적인 연동과 사용자 인터페이스의 반응성을 동시에 확보하는 것이 중요했습니다. 또한, Scene Builder를 통한 FXML 설계와 컨트롤러 간의 데이터 바인딩을 정확히 구현하는 데 많은 시간을 할애했습니다.',
     outcome: 'ABC ShoppingMall 프로젝트를 통해 JavaFX 기반의 데스크톱 애플리케이션 개발 경험을 쌓았습니다. 특히, Oracle Database 연동을 통한 데이터 관리와 사용자 친화적인 GUI 설계 능력을 향상시켰습니다. 팀원들과의 협업을 통해 프로젝트 관리 능력과 의사소통 스킬도 크게 발전시킬 수 있었습니다. 이 프로젝트는 실무에서 요구되는 데스크톱 애플리케이션 개발 역량을 기르는 데 중요한 경험이 되었습니다.',
-    images: [
-      '/image/projectimage/abcmall/ABC_Shopping_UI_1.jpg',
-      '/image/projectimage/abcmall/ABC_Shopping_UI_2.jpg',
-      '/image/projectimage/abcmall/ABC_Shopping_UI_3.jpg',
-      '/image/projectimage/abcmall/ABC_Shopping_UI_4.jpg',
-      '/image/projectimage/abcmall/ABC_Shopping_UI_5.jpg',
-      '/image/projectimage/abcmall/ABC_Shopping_UI_6.jpg',
-    ],
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -193,11 +184,10 @@ function ABCMallProjectPage() {
   return (
     <div className="project-detail-page">
       <div className="container">
-        <Link to="/" className="back-button">← 홈으로 돌아가기</Link>
 
         {/* 프로젝트 헤더 */}
         <header className="project-header">
-          <img className="mainimage" src={project.mainimage || project.thumbnail} alt={project.title} />
+          <img className="mainimage" src={project.mainimage} alt={project.title} />
           <h1>{project.title}</h1>
           <p className="project-period">{project.period}</p>
           <p className="project-description">{project.description}</p>
@@ -261,15 +251,28 @@ function ABCMallProjectPage() {
           </section>
         )}
 
-        {/* 기술 스택 */}
-        <section className="tech-stack">
-          <h2>사용 기술</h2>
-          <div className="skills-list">
-            {project.skills.map((skill, index) => (
-              <span key={index} className="skill-tag">{skill}</span>
+            {/* 프로젝트 배경 */}
+        <section className="project-background">
+          <h2>프로젝트 배경</h2>
+          <ul>
+            {project.background.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
-          </div>
+          </ul>
         </section>
+
+
+        {/* 프로젝트 목표 */}
+        {project.projectGoals && (
+          <section className="project-goals">
+            <h2>프로젝트 목표</h2>
+            <ul>
+              {project.projectGoals.map((goal, index) => (
+                <li key={index}>{goal}</li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* 기술 스택 상세 */}
         {project.techStack && (
@@ -291,14 +294,16 @@ function ABCMallProjectPage() {
             ))}
           </section>
         )}
-
-        {/* 프로젝트 목표 */}
-        {project.projectGoals && (
-          <section className="project-goals">
-            <h2>프로젝트 목표</h2>
+        
+        {/* 데이터베이스 설계 */}
+        {project.databaseDesign && (
+          <section className="database-design">
+            <h2>데이터베이스 설계</h2>
+            <img class="detailImage" src="/image/projectImage/abcShopping/3-2.jpg"></img>
+            <p>{project.databaseDesign.description}</p>
             <ul>
-              {project.projectGoals.map((goal, index) => (
-                <li key={index}>{goal}</li>
+              {project.databaseDesign.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
               ))}
             </ul>
           </section>
@@ -308,6 +313,7 @@ function ABCMallProjectPage() {
         {project.projectStructure && (
           <section className="project-structure">
             <h2>{project.projectStructure.title}</h2>
+            <img class="detailImage" src="/image/projectImage/abcShopping/3-5.png"></img>
             <p>{project.projectStructure.description}</p>
             <ul>
               {project.projectStructure.structure.map((item, index) => (
@@ -321,20 +327,11 @@ function ABCMallProjectPage() {
         {project.storyboard && (
           <section className="project-storyboard">
             <h2>{project.storyboard.title}</h2>
+            <img class="detailImage" src="/image/projectImage/abcShopping/3-1.jpg"></img>
             <p>{project.storyboard.description}</p>
             <p><strong>흐름:</strong> {project.storyboard.flow}</p>
           </section>
         )}
-
-        {/* 프로젝트 배경 */}
-        <section className="project-background">
-          <h2>프로젝트 배경</h2>
-          <ul>
-            {project.background.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </section>
 
         {/* 주요 기능 상세 */}
         {project.mainFeatures && (
@@ -350,16 +347,6 @@ function ABCMallProjectPage() {
             ))}
           </section>
         )}
-
-        {/* 주요 기능 (간단 목록) */}
-        <section className="project-features">
-          <h2>주요 기능</h2>
-          <ul>
-            {project.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-        </section>
 
         {/* 기술 사용처 */}
         {project.technologyUsage && (
@@ -408,48 +395,6 @@ function ABCMallProjectPage() {
                 <p>{project.troubleshooting.result}</p>
               </div>
             </div>
-          </section>
-        )}
-
-        {/* 프로젝트 이미지 */}
-        {project.images && project.images.length > 0 && (
-          <section className="project-images">
-            <h2>프로젝트 이미지</h2>
-            <div className="images-grid">
-              {project.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${project.title} 스크린샷 ${index + 1}`}
-                  onClick={() => openImageModal(image)}
-                />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* 시스템 구조 */}
-        <section className="project-architecture">
-          <h2>시스템 구조</h2>
-          <div className="architecture-grid">
-            {Object.entries(project.architecture).map(([key, value]) => (
-              <div key={key} className="architecture-item">
-                <strong>{key}:</strong> {value}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 데이터베이스 설계 */}
-        {project.databaseDesign && (
-          <section className="database-design">
-            <h2>데이터베이스 설계</h2>
-            <p>{project.databaseDesign.description}</p>
-            <ul>
-              {project.databaseDesign.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
           </section>
         )}
 

@@ -10,8 +10,7 @@ function MogatshooProjectPage() {
     title: '모갓슈? - 탈모인을 위한 웹 개발 Project',
     description: '탈모인을 위한 익명 기반 공감 커뮤니티',
     period: '2025.05.12 - 2025.06.20',
-    thumbnail: '/image/projectimage/mogatshoo/mogatshoo_main.png',
-    mainimage: '/image/projectimage/mogatshoo/mogatshoo_main.png',
+    mainimage: '/image/mogatshoo.png',
     videoUrl: 'https://www.youtube.com/embed/JcuWNKhWlmo',
     gitRepository: 'https://github.com/mogatshoo/Mogatshoo-Project',
     projectOverview: {
@@ -276,18 +275,8 @@ function MogatshooProjectPage() {
       { name: '최승필', role: '팀원', portfolio: 'https://notion-portfolio-link.com' },
       { name: '유태종', role: '팀원', portfolio: 'https://github.com/yutaejong' },
     ],
-    challenges: '탈모라는 민감한 주제를 다루면서도 유쾌하고 안전한 익명 커뮤니티를 구축하는 것, Teachable Machine 모델의 정확도 향상을 위한 대량 이미지 수집 및 증강, Spring Boot와 JavaScript AI 모델 간의 효율적인 연동, OAuth2를 통한 다중 SNS 로그인 통합 처리, Windows 95 스타일 레트로 UI 구현, AWS 환경에서의 안정적인 배포 및 운영, 실시간 비동기 처리를 통한 사용자 경험 최적화, 개인정보 보호와 익명성 보장을 위한 보안 시스템 구축 등 기술적, 사회적 측면의 복합적인 도전이 있었습니다.',
+    challenges: 'AI 딥러닝을 활용하게 되었는데 AI 모델에 학습을 시킬 때 탈모 사진이 아닌 것에 대한 예외처리를 하는 것이 너무 힘들었습니다. 아무리 예외처리를 학습을 시켜도 먼치킨 도넛, 강아지 정수리, 햄스터 정수리 등을 완벽하게 예외처리를 할 수 없다는 것을 알게 되었습니다. 따라서 딥러닝에 대해 공부를 하던 중 혼동행렬이란걸 알게 되었고 체계적으로 혼동행렬을 작성해 가며 AI 진단 결과의 정확도를 정해놓고 그에 맞게 negative, positive로 나누어 진단 정확도가 70%이상이 나오도록 구성하였습니다. 이러한 과정을 통해서 파이선을 활용한 이미지 증강법 딥러닝의 기초 등을 학습할 수 있었습니다.',
     outcome: 'Spring Boot와 AI 모델을 결합한 혁신적인 서비스 개발 경험을 통해 풀스택 개발 역량을 크게 향상시켰습니다. Teachable Machine과 OpenCV를 활용한 실시간 이미지 분석 시스템 구축으로 AI 기술 융합 능력을 기를 수 있었고, OAuth2 기반 다중 SNS 로그인과 이메일 인증 시스템 구현으로 현대적인 웹 서비스 보안 기술을 습득했습니다. 또한 사회적 가치를 담은 서비스 기획부터 AI 모델 학습, 배포까지의 전 과정을 경험하며 문제 해결 능력과 사용자 중심 사고를 기를 수 있었습니다.',
-    images: [
-      '/image/projectimage/mogatshoo/Mogatshoo_UI_1.jpg',
-      '/image/projectimage/mogatshoo/Mogatshoo_UI_2.jpg',
-      '/image/projectimage/mogatshoo/Mogatshoo_UI_3.jpg',
-      '/image/projectimage/mogatshoo/Mogatshoo_UI_4.jpg',
-      '/image/projectimage/mogatshoo/Mogatshoo_UI_5.jpg',
-      '/image/projectimage/mogatshoo/Mogatshoo_UI_6.jpg',
-      '/image/projectimage/mogatshoo/Mogatshoo_UI_7.jpg',
-      '/image/projectimage/mogatshoo/Mogatshoo_UI_8.jpg',
-    ],
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -309,11 +298,10 @@ function MogatshooProjectPage() {
   return (
     <div className="project-detail-page">
       <div className="container">
-        <Link to="/" className="back-button">← 홈으로 돌아가기</Link>
 
         {/* 프로젝트 헤더 */}
         <header className="project-header">
-          <img className="mainimage" src={project.mainimage || project.thumbnail} alt={project.title} />
+          <img className="mainimage" src={project.mainimage} alt={project.title} />
           <h1>{project.title}</h1>
           <p className="project-period">{project.period}</p>
           <p className="project-description">{project.description}</p>
@@ -339,7 +327,7 @@ function MogatshooProjectPage() {
             <div className="project-actions">
               {project.notionLink && (
                 <a href={project.notionLink} target="_blank" rel="noopener noreferrer" className="notion-link-btn">
-                  상세보기 (Notion)
+                  상세보기 (GitHub)
                 </a>
               )}
               {project.gitRepository && (
@@ -348,7 +336,11 @@ function MogatshooProjectPage() {
                 </a>
               )}
             </div>
-          )}
+              )}
+            <div className="project-actions">
+              <a href="https://mogatshoo.onrender.com/" className="notion-link-btn">
+                웹사이트페이지</a>
+            </div>
         </header>
 
         {/* 프로젝트 개요 */}
@@ -399,25 +391,40 @@ function MogatshooProjectPage() {
           </section>
         )}
 
-        {/* 프로젝트 구성 및 설계 */}
-        {project.projectStructure && (
-          <section className="project-structure">
-            <h2>프로젝트 구성 및 설계</h2>
-            <h3>{project.projectStructure.title}</h3>
-            <p>{project.projectStructure.description}</p>
-          </section>
-        )}
 
         {/* 시스템 아키텍처 */}
         <section className="system-architecture">
           <h2>시스템 아키텍처</h2>
+          <img class="detailImage" src="/image/projectImage/mogatshoo/1-5.png"></img>
           <p>프론트엔드, 백엔드, AI 모델, 외부 API 간의 통합 구조</p>
         </section>
+
+        {/* 기술 스택 상세 */}
+        {project.techStack && (
+          <section className="tech-stack-detail">
+            <h2>기술 스택 상세</h2>
+            {Object.entries(project.techStack).map(([category, techs]) => (
+              <div key={category} className="tech-category">
+                <h3>{category}</h3>
+                <ul className="tech-list">
+                  {Array.isArray(techs) ? (
+                    techs.map((tech, index) => (
+                      <li key={index}>{tech}</li>
+                    ))
+                  ) : (
+                    <li>{techs}</li>
+                  )}
+                </ul>
+              </div>
+            ))}
+          </section>
+        )}
 
         {/* 데이터베이스 설계 */}
         {project.databaseDesign && (
           <section className="database-design">
             <h2>Database ERD</h2>
+            <img class="detailImage" src="/image/projectImage/mogatshoo/1-1.png"></img>
             <p>{project.databaseDesign.description}</p>
             <ul>
               {project.databaseDesign.features.map((feature, index) => (
@@ -431,6 +438,7 @@ function MogatshooProjectPage() {
         {project.aiModelStructure && (
           <section className="ai-model-structure">
             <h2>{project.aiModelStructure.title}</h2>
+            <img class="detailImage" src="/image/projectImage/mogatshoo/1-2.jpg"></img>
             <p>{project.aiModelStructure.description}</p>
             <ul>
               {project.aiModelStructure.features.map((feature, index) => (
@@ -455,53 +463,13 @@ function MogatshooProjectPage() {
                 {feature.votingModule && (<div className="sub-feature"><h4>{feature.votingModule.title}</h4><ul>{feature.votingModule.features.map((item, index) => (<li key={index}>{item}</li>))}</ul>{feature.votingModule.technicalDetails && (<div className="feature-details"><h5>기술적 특징</h5><ul>{feature.votingModule.technicalDetails.map((detail, index) => (<li key={index}>{detail}</li>))}</ul></div>)}</div>)}
                 {feature.questionManagement && (<div className="sub-feature"><h4>{feature.questionManagement.title}</h4><ul>{feature.questionManagement.features.map((item, index) => (<li key={index}>{item}</li>))}</ul></div>)}
                 {feature.votingStatistics && (<div className="sub-feature"><h4>{feature.votingStatistics.title}</h4><ul>{feature.votingStatistics.features.map((item, index) => (<li key={index}>{item}</li>))}</ul>{feature.votingStatistics.calculations && (<div className="calculations"><h5>세분화된 지표 계산</h5><ul>{feature.votingStatistics.calculations.map((calc, index) => (<li key={index}>{calc}</li>))}</ul></div>)}</div>)}
-                {feature.databaseDesign && (<div className="sub-feature"><h4>{feature.databaseDesign.title}</h4>{feature.databaseDesign.questionTable && (<><h5>핵심 테이블 구조 - 질문 테이블</h5><ul>{feature.databaseDesign.questionTable.map((item, index) => (<li key={index}>{item}</li>))}</ul></>)}{feature.databaseDesign.votingTable && (<><h5>투표 테이블</h5><ul>{feature.databaseDesign.votingTable.map((item, index) => (<li key={index}>{item}</li>))}</ul></>)}</div>)}
+                {feature.databaseDesign && (<div className="sub-feature"><h4>{feature.databaseDesign.title}</h4>{feature.databaseDesign.questionTable && (<><h5>핵심 테이블 구조 - 질문 테이블</h5><img class="detailImage" src="/image/projectImage/mogatshoo/1-3.jpg"></img><ul>{feature.databaseDesign.questionTable.map((item, index) => (<li key={index}>{item}</li>))}</ul></>)}{feature.databaseDesign.votingTable && (<><h5>투표 테이블</h5><ul>{feature.databaseDesign.votingTable.map((item, index) => (<li key={index}>{item}</li>))}</ul></>)}</div>)}
                 {feature.securityAndOptimization && (<div className="sub-feature"><h4>{feature.securityAndOptimization.title}</h4><h5>다층 보안 구조</h5><ul>{feature.securityAndOptimization.security.map((item, index) => (<li key={index}>{item}</li>))}</ul><h5>성능 최적화</h5><ul>{feature.securityAndOptimization.optimization.map((item, index) => (<li key={index}>{item}</li>))}</ul><h5>확장성 고려사항</h5><ul>{feature.securityAndOptimization.extensibility.map((item, index) => (<li key={index}>{item}</li>))}</ul></div>)}
               </div>
             ))}
           </section>
         )}
 
-        {/* 주요 기능 (간단 목록) */}
-        <section className="project-features">
-          <h2>주요 기능</h2>
-          <ul>
-            {project.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-        </section>
-
-        {/* 기술 스택 */}
-        <section className="tech-stack">
-          <h2>기술 스택</h2>
-          <div className="skills-list">
-            {project.skills.map((skill, index) => (
-              <span key={index} className="skill-tag">{skill}</span>
-            ))}
-          </div>
-        </section>
-
-        {/* 기술 스택 상세 */}
-        {project.techStack && (
-          <section className="tech-stack-detail">
-            <h2>기술 스택 상세</h2>
-            {Object.entries(project.techStack).map(([category, techs]) => (
-              <div key={category} className="tech-category">
-                <h3>{category}</h3>
-                <ul className="tech-list">
-                  {Array.isArray(techs) ? (
-                    techs.map((tech, index) => (
-                      <li key={index}>{tech}</li>
-                    ))
-                  ) : (
-                    <li>{techs}</li>
-                  )}
-                </ul>
-              </div>
-            ))}
-          </section>
-        )}
 
         {/* 프로젝트 키워드 */}
         {project.keyTechnicalFeatures && (
@@ -527,6 +495,18 @@ function MogatshooProjectPage() {
             </ul>
           </section>
         )}
+        {/* 도전과제와 성과 */}
+        <section className="challenges-outcome">
+          <div className="challenges">
+            <h2>troubleshooting</h2>
+            <img class="detailImage" src="/image/projectImage/mogatshoo/1-4.jpg"></img>
+            <p>{project.challenges}</p>
+          </div>
+          <div className="outcome">
+            <h2>성과 및 배운점</h2>
+            <p>{project.outcome}</p>
+          </div>
+        </section>
 
         {/* 팀 멤버 */}
         <section className="team-members">
@@ -547,34 +527,6 @@ function MogatshooProjectPage() {
           </div>
         </section>
 
-        {/* 도전과제와 성과 */}
-        <section className="challenges-outcome">
-          <div className="challenges">
-            <h2>도전과제</h2>
-            <p>{project.challenges}</p>
-          </div>
-          <div className="outcome">
-            <h2>성과 및 배운점</h2>
-            <p>{project.outcome}</p>
-          </div>
-        </section>
-
-        {/* 프로젝트 이미지 */}
-        {project.images && project.images.length > 0 && (
-          <section className="project-images">
-            <h2>프로젝트 이미지</h2>
-            <div className="images-grid">
-              {project.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${project.title} 스크린샷 ${index + 1}`}
-                  onClick={() => openImageModal(image)}
-                />
-              ))}
-            </div>
-          </section>
-        )}
 
         {/* 이미지 모달 */}
         {selectedImage && (
