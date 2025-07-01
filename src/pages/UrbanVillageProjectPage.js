@@ -282,7 +282,7 @@ function UrbanVillageProjectPage() {
             <h2>프로젝트 구성 및 설계</h2>
             <h3>{project.siteMap.title}</h3>
             <p><strong>{project.siteMap.customerFlow}</strong></p>
-            <img class ="detailImage" src="/image/projectImage/urban/2-1.jpg"></img>
+            <img class ="detailImage" src="/image/projectImage/urban/2-1.jpg" alt="프로젝트 이미지"></img>
             <br></br>
             <br></br>
             <p><strong>{project.siteMap.adminFlow}</strong></p>
@@ -294,7 +294,7 @@ function UrbanVillageProjectPage() {
         {project.databaseDesign && (
           <section className="database-design">
             <h2>Database ERD</h2>
-            <img class ="detailImage" src="/image/projectImage/urban/2-3.jpg"></img>
+            <img class ="detailImage" src="/image/projectImage/urban/2-3.jpg" alt="프로젝트 이미지"></img>
             <div className="database-features">
               <h3>1. 핵심 정보 저장 테이블</h3>
               <ul>
@@ -320,7 +320,7 @@ function UrbanVillageProjectPage() {
         {project.techStack && (
           <section className="tech-stack-detail">
             <h2>기술 스택 상세</h2>
-            <img class ="detailImage" src="/image/projectImage/urban/2-5.jpg"></img>
+            <img class ="detailImage" src="/image/projectImage/urban/2-5.jpg" alt="프로젝트 이미지"></img>
             {Object.entries(project.techStack).map(([category, techs]) => (
               <div key={category} className="tech-category">
                 <h3>{category}</h3>
@@ -389,7 +389,7 @@ function UrbanVillageProjectPage() {
         {project.troubleshooting && (
           <section className="troubleshooting-section">
             <h2>Troubleshooting</h2>
-            <img class ="detailImage" src="/image/projectImage/urban/2-15.jpg"></img>
+            <img class ="detailImage" src="/image/projectImage/urban/2-15.jpg" alt="프로젝트 이미지"></img>
             <div className="troubleshooting-content">
               <h3>{project.troubleshooting.title}</h3>
               <div className="troubleshooting-problem">

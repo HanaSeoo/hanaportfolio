@@ -157,8 +157,6 @@ function PortfolioProjectPage() {
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
-
-  const openImageModal = (image) => setSelectedImage(image);
   const closeImageModal = () => setSelectedImage(null);
 
   if (!project) {

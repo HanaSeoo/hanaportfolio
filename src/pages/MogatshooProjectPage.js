@@ -280,8 +280,6 @@ function MogatshooProjectPage() {
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
-
-  const openImageModal = (image) => setSelectedImage(image);
   const closeImageModal = () => setSelectedImage(null);
 
   if (!project) {
@@ -395,7 +393,7 @@ function MogatshooProjectPage() {
         {/* 시스템 아키텍처 */}
         <section className="system-architecture">
           <h2>시스템 아키텍처</h2>
-          <img class="detailImage" src="/image/projectImage/mogatshoo/1-5.png"></img>
+          <img class="detailImage" src="/image/projectImage/mogatshoo/1-5.png" alt="프로젝트 이미지"></img>
           <p>프론트엔드, 백엔드, AI 모델, 외부 API 간의 통합 구조</p>
         </section>
 
@@ -424,7 +422,7 @@ function MogatshooProjectPage() {
         {project.databaseDesign && (
           <section className="database-design">
             <h2>Database ERD</h2>
-            <img class="detailImage" src="/image/projectImage/mogatshoo/1-1.png"></img>
+            <img class="detailImage" src="/image/projectImage/mogatshoo/1-1.png" alt="프로젝트 이미지"></img>
             <p>{project.databaseDesign.description}</p>
             <ul>
               {project.databaseDesign.features.map((feature, index) => (
@@ -438,7 +436,7 @@ function MogatshooProjectPage() {
         {project.aiModelStructure && (
           <section className="ai-model-structure">
             <h2>{project.aiModelStructure.title}</h2>
-            <img class="detailImage" src="/image/projectImage/mogatshoo/1-2.jpg"></img>
+            <img class="detailImage" src="/image/projectImage/mogatshoo/1-2.jpg" alt="프로젝트 이미지"></img>
             <p>{project.aiModelStructure.description}</p>
             <ul>
               {project.aiModelStructure.features.map((feature, index) => (
@@ -463,7 +461,7 @@ function MogatshooProjectPage() {
                 {feature.votingModule && (<div className="sub-feature"><h4>{feature.votingModule.title}</h4><ul>{feature.votingModule.features.map((item, index) => (<li key={index}>{item}</li>))}</ul>{feature.votingModule.technicalDetails && (<div className="feature-details"><h5>기술적 특징</h5><ul>{feature.votingModule.technicalDetails.map((detail, index) => (<li key={index}>{detail}</li>))}</ul></div>)}</div>)}
                 {feature.questionManagement && (<div className="sub-feature"><h4>{feature.questionManagement.title}</h4><ul>{feature.questionManagement.features.map((item, index) => (<li key={index}>{item}</li>))}</ul></div>)}
                 {feature.votingStatistics && (<div className="sub-feature"><h4>{feature.votingStatistics.title}</h4><ul>{feature.votingStatistics.features.map((item, index) => (<li key={index}>{item}</li>))}</ul>{feature.votingStatistics.calculations && (<div className="calculations"><h5>세분화된 지표 계산</h5><ul>{feature.votingStatistics.calculations.map((calc, index) => (<li key={index}>{calc}</li>))}</ul></div>)}</div>)}
-                {feature.databaseDesign && (<div className="sub-feature"><h4>{feature.databaseDesign.title}</h4>{feature.databaseDesign.questionTable && (<><h5>핵심 테이블 구조 - 질문 테이블</h5><img class="detailImage" src="/image/projectImage/mogatshoo/1-3.jpg"></img><ul>{feature.databaseDesign.questionTable.map((item, index) => (<li key={index}>{item}</li>))}</ul></>)}{feature.databaseDesign.votingTable && (<><h5>투표 테이블</h5><ul>{feature.databaseDesign.votingTable.map((item, index) => (<li key={index}>{item}</li>))}</ul></>)}</div>)}
+                {feature.databaseDesign && (<div className="sub-feature"><h4>{feature.databaseDesign.title}</h4>{feature.databaseDesign.questionTable && (<><h5>핵심 테이블 구조 - 질문 테이블</h5><img class="detailImage" src="/image/projectImage/mogatshoo/1-3.jpg" alt="프로젝트 이미지"></img><ul>{feature.databaseDesign.questionTable.map((item, index) => (<li key={index}>{item}</li>))}</ul></>)}{feature.databaseDesign.votingTable && (<><h5>투표 테이블</h5><ul>{feature.databaseDesign.votingTable.map((item, index) => (<li key={index}>{item}</li>))}</ul></>)}</div>)}
                 {feature.securityAndOptimization && (<div className="sub-feature"><h4>{feature.securityAndOptimization.title}</h4><h5>다층 보안 구조</h5><ul>{feature.securityAndOptimization.security.map((item, index) => (<li key={index}>{item}</li>))}</ul><h5>성능 최적화</h5><ul>{feature.securityAndOptimization.optimization.map((item, index) => (<li key={index}>{item}</li>))}</ul><h5>확장성 고려사항</h5><ul>{feature.securityAndOptimization.extensibility.map((item, index) => (<li key={index}>{item}</li>))}</ul></div>)}
               </div>
             ))}
@@ -499,7 +497,7 @@ function MogatshooProjectPage() {
         <section className="challenges-outcome">
           <div className="challenges">
             <h2>troubleshooting</h2>
-            <img class="detailImage" src="/image/projectImage/mogatshoo/1-4.jpg"></img>
+            <img class="detailImage" src="/image/projectImage/mogatshoo/1-4.jpg" alt="프로젝트 이미지"></img>
             <p>{project.challenges}</p>
           </div>
           <div className="outcome">

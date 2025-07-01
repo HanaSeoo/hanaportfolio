@@ -166,8 +166,6 @@ function ABCMallProjectPage() {
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
-
-  const openImageModal = (image) => setSelectedImage(image);
   const closeImageModal = () => setSelectedImage(null);
 
   if (!project) {
@@ -299,7 +297,7 @@ function ABCMallProjectPage() {
         {project.databaseDesign && (
           <section className="database-design">
             <h2>데이터베이스 설계</h2>
-            <img class="detailImage" src="/image/projectImage/abcShopping/3-2.jpg"></img>
+            <img class="detailImage" src="/image/projectImage/abcShopping/3-2.jpg" alt="프로젝트 이미지"></img>
             <p>{project.databaseDesign.description}</p>
             <ul>
               {project.databaseDesign.features.map((feature, index) => (
@@ -313,7 +311,7 @@ function ABCMallProjectPage() {
         {project.projectStructure && (
           <section className="project-structure">
             <h2>{project.projectStructure.title}</h2>
-            <img class="detailImage" src="/image/projectImage/abcShopping/3-5.png"></img>
+            <img class="detailImage" src="/image/projectImage/abcShopping/3-5.png" alt="프로젝트 이미지"></img>
             <p>{project.projectStructure.description}</p>
             <ul>
               {project.projectStructure.structure.map((item, index) => (
@@ -327,7 +325,7 @@ function ABCMallProjectPage() {
         {project.storyboard && (
           <section className="project-storyboard">
             <h2>{project.storyboard.title}</h2>
-            <img class="detailImage" src="/image/projectImage/abcShopping/3-1.jpg"></img>
+            <img class="detailImage" src="/image/projectImage/abcShopping/3-1.jpg" alt="프로젝트 이미지"></img>
             <p>{project.storyboard.description}</p>
             <p><strong>흐름:</strong> {project.storyboard.flow}</p>
           </section>
