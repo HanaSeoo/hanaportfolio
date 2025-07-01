@@ -286,7 +286,7 @@ function UrbanVillageProjectPage() {
             <br></br>
             <br></br>
             <p><strong>{project.siteMap.adminFlow}</strong></p>
-            <img class ="detailImage" src="/image/projectImage/urban/2-2.jpg"></img>
+            <img class ="detailImage" src="/image/projectImage/urban/2-2.jpg" alt="프로젝트 이미지"></img>
           </section>
         )}
 
