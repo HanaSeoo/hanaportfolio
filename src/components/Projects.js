@@ -41,21 +41,21 @@ function Projects() {
           
 
           {/* 3 번째 프로젝트 */}
-<Link to="/project/portfolio" className="project-card">
-  <div className="project-image">
-    <img src="/image/profile.png" alt="프로젝트" />
-  </div>
-  <div className="project-info">
-    <h3>개인 포트폴리오 웹사이트</h3>
-    <p>React를 활용한 모던하고 반응형인 개인 포트폴리오</p>
-    <div className="project-tags">
-      <span className="tag">React</span>
-      <span className="tag">JavaScript</span>
-      <span className="tag">CSS3</span>
-      <span className="tag">Netlify</span>
-    </div>
-  </div>
-</Link>
+          <Link to="/project/portfolio" className="project-card">
+            <div className="project-image">
+              <img src="/image/profile.png" alt="프로젝트" />
+            </div>
+            <div className="project-info">
+              <h3>개인 포트폴리오 웹사이트</h3>
+                <p>React를 활용한 모던하고 반응형인 개인 포트폴리오</p>
+                  <div className="project-tags">
+                    <span className="tag">React</span>
+                    <span className="tag">JavaScript</span>
+                    <span className="tag">CSS3</span>
+                    <span className="tag">Netlify</span>
+                  </div>
+            </div>
+          </Link>
           {/* 4 번째 프로젝트 */}
           <Link to="/project/abcShopping" className="project-card">
             <div className="project-image">
