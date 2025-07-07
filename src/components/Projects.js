@@ -20,6 +20,7 @@ function Projects() {
                 <span className="tag">React</span>
                 <span className="tag">Spring Boot</span>
                 <span className="tag">Deep Learning</span>
+                <span className="tag">MySQL</span>
               </div>
             </div>
           </Link>
@@ -33,8 +34,10 @@ function Projects() {
               <h3>숙소 예약 시스템</h3>
               <p>API 연동과 예약 시스템 중복 방지 로직 구현</p>
               <div className="project-tags">
-                <span className="tag">Spring</span>
+                <span className="tag">Spring Framework</span>
                 <span className="tag">API</span>
+                <span className="tag">FINTECH</span>
+                <span className="tag">Oracle</span>
               </div>
             </div>
           </Link>
@@ -53,6 +56,7 @@ function Projects() {
                     <span className="tag">JavaScript</span>
                     <span className="tag">CSS3</span>
                     <span className="tag">Netlify</span>
+                    <span className="tag">VSCode</span>
                   </div>
             </div>
           </Link>

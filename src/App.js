@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './pages/Home';
-
 import MySkills from './pages/MySkills';
 import ScrollToTop from './components/ScrollToTop';
 import MogatshooProjectPage from './pages/MogatshooProjectPage';
 import UrbanVillageProjectPage from './pages/UrbanVillageProjectPage';
 import PortfolioProjectPage from './pages/PortfolioProjectPage';
 import ABCMallProjectPage from './pages/ABCMallProjectPage';
+
 
 function App() {
   return (
