@@ -10,6 +10,12 @@
   overflow: hidden;
 }
 
+.hero-project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .hero-main-container {
   max-width: 1200px;
   margin: 10px;
@@ -452,8 +458,13 @@
   backdrop-filter: blur(10px);
 }
 
-.hero-timeline-item:nth-child(odd) .hero-timeline-content {
-  margin-left: auto;
+/* 수정된 타임라인 배치 - Link와 div 모두 포함 */
+.hero-enhanced-timeline > *:nth-child(odd) .hero-timeline-content {
+  margin-left: 0; /* 홀수는 왼쪽 */
+}
+
+.hero-enhanced-timeline > *:nth-child(even) .hero-timeline-content {
+  margin-left: auto; /* 짝수는 오른쪽 */
 }
 
 .hero-timeline-content::before {
@@ -465,14 +476,17 @@
   border: 15px solid transparent;
 }
 
-.hero-timeline-item:nth-child(odd) .hero-timeline-content::before {
-  left: -30px;
-  border-right-color: rgba(255, 255, 255, 0.9);
-}
-
-.hero-timeline-item:nth-child(even) .hero-timeline-content::before {
+/* 수정된 말풍선 꼬리 방향 */
+.hero-enhanced-timeline > *:nth-child(odd) .hero-timeline-content::before {
   right: -30px;
   border-left-color: rgba(255, 255, 255, 0.9);
+  border-right-color: transparent;
+}
+
+.hero-enhanced-timeline > *:nth-child(even) .hero-timeline-content::before {
+  left: -30px;
+  border-right-color: rgba(255, 255, 255, 0.9);
+  border-left-color: transparent;
 }
 
 .hero-timeline-item[data-type="project"] .hero-timeline-content {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 function Hero() {
@@ -33,12 +34,10 @@ function Hero() {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
 
-      // Hero 섹션 애니메이션
       if (scrollY > 100) {
         setHeroVisible(true);
       }
 
-      // Journey 섹션 애니메이션
       const journeySection = document.getElementById('journey');
       if (journeySection) {
         const rect = journeySection.getBoundingClientRect();
@@ -47,7 +46,6 @@ function Hero() {
         }
       }
 
-      // Tech Stack 섹션 애니메이션
       const techStackSection = document.getElementById('hero-tech-stack');
       if (techStackSection) {
         const rect = techStackSection.getBoundingClientRect();
@@ -57,7 +55,6 @@ function Hero() {
       }
     };
 
-    // 초기 로드 시 Hero 애니메이션 실행
     setTimeout(() => setHeroVisible(true), 300);
     
     window.addEventListener('scroll', handleScroll);
@@ -81,13 +78,8 @@ function Hero() {
     link.click();
   };
 
-  const handleProjectClick = (projectId) => {
-    window.location.href = `/project/${projectId}`;
-  };
-
   return (
     <>
-      {/* Hero Section */}
       <section className="hero-main-section" id="home">
         <div className="hero-main-container">
           <div className={`hero-main-content ${heroVisible ? 'visible' : ''}`}>
@@ -200,7 +192,6 @@ function Hero() {
         </div>
       </section>
 
-      {/* Enhanced Journey Timeline Section */}
       <section className="hero-enhanced-journey-section" id="journey">
         <div className="hero-journey-container">
           <h2 className={`hero-journey-title ${journeyVisible ? 'visible' : ''}`}>
@@ -231,75 +222,83 @@ function Hero() {
               </div>
             </div>
 
-            <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '0.6s'}} onClick={() => handleProjectClick(4)}>
-              <div className="hero-timeline-icon">☕</div>
-              <div className="hero-timeline-content">
-                <div className="hero-timeline-date">2024년 12월</div>
-                <h3 className="hero-timeline-title">첫 번째 프로젝트: 쇼핑몰 웹 <span className="hero-click-hint">👆 클릭해보세요!</span></h3>
-                <p className="hero-timeline-description">
-                  Java, Eclipse, Oracle, SceneBuilder를 배우며 첫 번째 프로젝트를 완성했어요. 
-                  기초부터 차근차근 배워가는 과정이 즐거웠습니다.
-                </p>
-                <div className="hero-project-tags">
-                  <span className="hero-tag">Java</span>
-                  <span className="hero-tag">Eclipse</span>
-                  <span className="hero-tag">Oracle</span>
-                  <span className="hero-tag">SceneBuilder</span>
+            <Link to="/project/abcShopping" className="hero-project-link">
+              <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '0.6s'}}>
+                <div className="hero-timeline-icon">☕</div>
+                <div className="hero-timeline-content">
+                  <div className="hero-timeline-date">2024년 12월</div>
+                  <h3 className="hero-timeline-title">첫 번째 프로젝트: 쇼핑몰 웹 <span className="hero-click-hint">👆 클릭해보세요!</span></h3>
+                  <p className="hero-timeline-description">
+                    Java, Eclipse, Oracle, SceneBuilder를 배우며 첫 번째 프로젝트를 완성했어요. 
+                    기초부터 차근차근 배워가는 과정이 즐거웠습니다.
+                  </p>
+                  <div className="hero-project-tags">
+                    <span className="hero-tag">Java</span>
+                    <span className="hero-tag">Eclipse</span>
+                    <span className="hero-tag">Oracle</span>
+                    <span className="hero-tag">SceneBuilder</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
             
-            <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '0.8s'}} onClick={() => handleProjectClick(2)}>
-              <div className="hero-timeline-icon">🏠</div>
-              <div className="hero-timeline-content">
-                <div className="hero-timeline-date">2025년 2월</div>
-                <h3 className="hero-timeline-title">두 번째 프로젝트: 숙소 예약 시스템 <span className="hero-click-hint">👆 클릭해보세요!</span></h3>
-                <p className="hero-timeline-description">
-                  Spring Framework를 학습하며 API 연동과 예약 시스템의 중복 방지 로직을 구현했어요. 
-                  백엔드 개발의 재미를 느꼈습니다.
-                </p>
-                <div className="hero-project-tags">
-                  <span className="hero-tag">Spring Framework</span>
-                  <span className="hero-tag">API</span>
-                  <span className="hero-tag">Oracle</span>
+            <Link to="/project/urbanVillage" className="hero-project-link">
+              <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '0.8s'}}>
+                <div className="hero-timeline-icon">🏠</div>
+                <div className="hero-timeline-content">
+                  <div className="hero-timeline-date">2025년 2월</div>
+                  <h3 className="hero-timeline-title">두 번째 프로젝트: 숙소 예약 시스템 <span className="hero-click-hint">👆 클릭해보세요!</span></h3>
+                  <p className="hero-timeline-description">
+                    Spring Framework를 학습하며 API 연동과 예약 시스템의 중복 방지 로직을 구현했어요. 
+                    백엔드 개발의 재미를 느꼈습니다.
+                  </p>
+                  <div className="hero-project-tags">
+                    <span className="hero-tag">Spring Framework</span>
+                    <span className="hero-tag">API</span>
+                    <span className="hero-tag">Oracle</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '1.0s'}} onClick={() => handleProjectClick(3)}>
-              <div className="hero-timeline-icon">⚛️</div>
-              <div className="hero-timeline-content">
-                <div className="hero-timeline-date">2025년 4월</div>
-                <h3 className="hero-timeline-title">세 번째 프로젝트: 포트폴리오 웹사이트 <span className="hero-click-hint">👆 클릭해보세요!</span></h3>
-                <p className="hero-timeline-description">
-                  React를 배우며 이 포트폴리오 웹사이트를 직접 제작했습니다.
-                </p>
-                <div className="hero-project-tags">
-                  <span className="hero-tag">React</span>
-                  <span className="hero-tag">JavaScript</span>
-                  <span className="hero-tag">CSS3</span>
-                  <span className="hero-tag">Netlify</span>
+            <Link to="/project/portfolio" className="hero-project-link">
+              <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '1.0s'}}>
+                <div className="hero-timeline-icon">⚛️</div>
+                <div className="hero-timeline-content">
+                  <div className="hero-timeline-date">2025년 4월</div>
+                  <h3 className="hero-timeline-title">세 번째 프로젝트: 포트폴리오 웹사이트 <span className="hero-click-hint">👆 클릭해보세요!</span></h3>
+                  <p className="hero-timeline-description">
+                    React를 배우며 이 포트폴리오 웹사이트를 직접 제작했습니다.
+                  </p>
+                  <div className="hero-project-tags">
+                    <span className="hero-tag">React</span>
+                    <span className="hero-tag">JavaScript</span>
+                    <span className="hero-tag">CSS3</span>
+                    <span className="hero-tag">Netlify</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '1.2s'}} onClick={() => handleProjectClick(1)}>
-              <div className="hero-timeline-icon">💊</div>
-              <div className="hero-timeline-content">
-                <div className="hero-timeline-date">2025년 6월</div>
-                <h3 className="hero-timeline-title">네번째 프로젝트: 탈모인들을 위한 웹 <span className="hero-click-hint">👆 클릭해보세요!</span></h3>
-                <p className="hero-timeline-description">
-                  딥러닝과 풀스택 개발을 결합한 최종 프로젝트를 완성했어요. 
-                  실제 사용자에게 도움이 되는 서비스를 만들 수 있어서 뿌듯했습니다.
-                </p>
-                <div className="hero-project-tags">
-                  <span className="hero-tag">React</span>
-                  <span className="hero-tag">Spring Boot</span>
-                  <span className="hero-tag">Deep Learning</span>
-                  <span className="hero-tag">Websocket</span>
+            <Link to="/project/mogatshoo" className="hero-project-link">
+              <div className={`hero-timeline-item hero-project-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="project" style={{animationDelay: '1.2s'}}>
+                <div className="hero-timeline-icon">💊</div>
+                <div className="hero-timeline-content">
+                  <div className="hero-timeline-date">2025년 6월</div>
+                  <h3 className="hero-timeline-title">네번째 프로젝트: 탈모인들을 위한 웹 <span className="hero-click-hint">👆 클릭해보세요!</span></h3>
+                  <p className="hero-timeline-description">
+                    딥러닝과 풀스택 개발을 결합한 최종 프로젝트를 완성했어요. 
+                    실제 사용자에게 도움이 되는 서비스를 만들 수 있어서 뿌듯했습니다.
+                  </p>
+                  <div className="hero-project-tags">
+                    <span className="hero-tag">React</span>
+                    <span className="hero-tag">Spring Boot</span>
+                    <span className="hero-tag">Deep Learning</span>
+                    <span className="hero-tag">Websocket</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
             
             <div className={`hero-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="future" style={{animationDelay: '1.4s'}}>
               <div className="hero-timeline-icon">🚀</div>
@@ -316,7 +315,6 @@ function Hero() {
         </div>
       </section>
 
-      {/* Tech Stack Section */}
       <section className="hero-tech-stack-section" id="hero-tech-stack">
         <div className="hero-tech-stack-container">
           <h2 className={`hero-tech-section-title ${techStackVisible ? 'visible' : ''}`}>
