@@ -6,6 +6,7 @@ function Hero() {
   const [heroVisible, setHeroVisible] = useState(false);
   const [journeyVisible, setJourneyVisible] = useState(false);
   const [techStackVisible, setTechStackVisible] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
 
   const techStacks = {
     Backend: [
@@ -76,6 +77,14 @@ function Hero() {
     link.href = '/myprofile/SeoHanaProfile.pdf';
     link.download = '서하나_이력서.pdf';
     link.click();
+  };
+
+  const openModal = (imageSrc, altText) => {
+    setModalImage({ src: imageSrc, alt: altText });
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
   };
 
   return (
@@ -291,7 +300,7 @@ function Hero() {
                     실제 사용자에게 도움이 되는 서비스를 만들 수 있어서 뿌듯했습니다.
                   </p>
                   <div className="hero-project-tags">
-                    <span className="hero-tag">React</span>
+                    <span className="hero-tag">MySQL</span>
                     <span className="hero-tag">Spring Boot</span>
                     <span className="hero-tag">Deep Learning</span>
                     <span className="hero-tag">Websocket</span>
@@ -300,20 +309,82 @@ function Hero() {
               </div>
             </Link>
             
-            <div className={`hero-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="future" style={{animationDelay: '1.4s'}}>
-              <div className="hero-timeline-icon">🚀</div>
+            {/* 수상 내역 추가 */}
+            <div className={`hero-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="award" style={{animationDelay: '1.4s'}}>
+              <div className="hero-timeline-icon">🏆</div>
               <div className="hero-timeline-content">
-                <div className="hero-timeline-date">2025년 현재 & 미래</div>
-                <h3 className="hero-timeline-title">새로운 도전을 향해</h3>
+                <div className="hero-timeline-date">2025년 6월</div>
+                <h3 className="hero-timeline-title">학생 우수상 수상</h3>
                 <p className="hero-timeline-description">
-                  교사로서 쌓은 소통 능력과 새롭게 배운 개발 기술을 결합하여, 
-                  사용자가 편리하고 따뜻함을 느낄 수 있는 서비스를 만들어가고 있어요!
+                  개발 과정에서의 성과를 인정받아 학생 우수상을 수상했습니다. 
+                  끊임없는 노력과 저의 꾸준함이 빛을 발하는 순간이었습니다.
                 </p>
+                <div className="hero-award-image">
+                  <div className="hero-award-preview" onClick={() => openModal('/image/top/award1.png', '학생 우수상 상장')}>
+                    <img 
+                      src="/image/top/award1.png" 
+                      alt="학생 우수상 상장"
+                      className="hero-award-certificate-preview"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'inline';
+                      }}
+                    />
+                    <span style={{display: 'none'}}>🏆 학생 우수상 상장</span>
+                    <div className="hero-award-overlay">
+                      <span className="hero-award-zoom-text">🔍 클릭하여 확대</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={`hero-timeline-item ${journeyVisible ? 'visible' : ''}`} data-type="award" style={{animationDelay: '1.6s'}}>
+              <div className="hero-timeline-icon">🥇</div>
+              <div className="hero-timeline-content">
+                <div className="hero-timeline-date">2025년 6월</div>
+                <h3 className="hero-timeline-title">프로젝트 우수상 수상</h3>
+                <p className="hero-timeline-description">
+                   탈모 진단 웹앱 프로젝트로 최우수상을 수상했습니다. 
+                   요즘 트렌드인 AI를 사용해 기술적 구현과 사용자 중심의 서비스 설계를 인정받을 수 있었습니다.
+                </p>
+                <div className="hero-award-image">
+                  <div className="hero-award-preview" onClick={() => openModal('/image/top/award2.png', '프로젝트 우수상 상장')}>
+                    <img 
+                      src="/image/top/award2.png" 
+                      alt="프로젝트 우수상 상장"
+                      className="hero-award-certificate-preview"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'inline';
+                      }}
+                    />
+                    <span style={{display: 'none'}}>🥇 프로젝트 우수상 상장</span>
+                    <div className="hero-award-overlay">
+                      <span className="hero-award-zoom-text">🔍 클릭하여 확대</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* 모달 추가 */}
+      {modalImage && (
+        <div className="hero-modal-overlay" onClick={closeModal}>
+          <div className="hero-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="hero-modal-close" onClick={closeModal}>✕</button>
+            <img 
+              src={modalImage.src} 
+              alt={modalImage.alt}
+              className="hero-modal-image"
+            />
+            <p className="hero-modal-caption">{modalImage.alt}</p>
+          </div>
+        </div>
+      )}
 
       <section className="hero-tech-stack-section" id="hero-tech-stack">
         <div className="hero-tech-stack-container">
