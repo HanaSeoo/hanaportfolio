@@ -398,7 +398,7 @@
 }
 
 .hero-journey-title::before {
-  content: '🌱';
+  content: '';
   position: absolute;
   left: -3rem;
   top: 50%;
@@ -407,7 +407,7 @@
 }
 
 .hero-journey-title::after {
-  content: '🚀';
+  content: '';
   position: absolute;
   right: -3rem;
   top: 50%;
