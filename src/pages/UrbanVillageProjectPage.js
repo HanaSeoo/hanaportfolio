@@ -427,7 +427,7 @@ function UrbanVillageProjectPage() {
                 <span className="member-role"> : {member.role}</span>
                 {member.portfolio && (
                   <a href={member.portfolio} target="_blank" rel="noopener noreferrer" className="portfolio-link">
-                    노션 포트폴리오(링크)
+                    포트폴리오(Git)
                   </a>
                 )}
               </div>
