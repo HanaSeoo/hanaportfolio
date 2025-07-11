@@ -16,23 +16,27 @@ function Header() {
       navigate('/');
       // 페이지 이동 후 스크롤 실행을 위해 약간의 지연
       setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
+        scrollToElement(sectionId);
       }, 100);
       return;
     }
     
     // 홈페이지에 있으면 바로 스크롤
+    scrollToElement(sectionId);
+  };
+  
+  const scrollToElement = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      // 헤더 높이를 동적으로 계산
+      const header = document.querySelector('.header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerHeight - 20; // 20px 여백 추가
+      
+      window.scrollTo({
+        top: Math.max(0, offsetPosition), // 음수 방지
+        behavior: 'smooth'
       });
     }
   };
@@ -50,31 +54,31 @@ function Header() {
           <button onClick={handleTreeClick} className="nav-link">Skills</button>
           <button onClick={() => scrollToSection('projects')} className="nav-link">Projects</button>
         </nav>
-
+        
         {/* 헤더 소셜 링크 */}
         <div className="header-social-links">
           <a 
-            href="https://github.com/HanaSeoo" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+            href="https://github.com/HanaSeoo"
+            target="_blank"
+            rel="noopener noreferrer"
             className="header-social-link github"
             title="GitHub"
           >
             <div className="header-social-icon"></div>
           </a>
           <a 
-            href="https://www.notion.so/1b9db822a28e801eb04af2f96ab48d5a" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+            href="https://www.notion.so/1b9db822a28e801eb04af2f96ab48d5a"
+            target="_blank"
+            rel="noopener noreferrer"
             className="header-social-link notion"
             title="Notion"
           >
             <div className="header-social-icon"></div>
           </a>
           <a 
-            href="https://velog.io/@gkskquf109/posts" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+            href="https://velog.io/@gkskquf109/posts"
+            target="_blank"
+            rel="noopener noreferrer"
             className="header-social-link velog"
             title="Velog"
           >
