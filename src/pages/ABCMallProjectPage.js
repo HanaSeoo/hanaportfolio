@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './ProjectDetail.css'; // 공통 스타일 시트 사용
 
 function ABCMallProjectPage() {
-  // ABC ShoppingMall 프로젝트 데이터를 이 컴포넌트 안에 직접 작성
   const project = {
     id: 'abcmall',
     title: 'ABC ShoppingMall',

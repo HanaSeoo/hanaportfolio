@@ -12,6 +12,27 @@ import ABCMallProjectPage from './pages/ABCMallProjectPage';
 
 
 function App() {
+   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // 전역 스크롤 감지
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setShowScrollTop(scrollTop > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 맨 위로 스크롤 함수
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
   return (
     <Router>
       <ScrollToTop />
