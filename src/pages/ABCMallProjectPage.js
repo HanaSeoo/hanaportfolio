@@ -271,7 +271,7 @@ function ABCMallProjectPage() {
           </section>
         )}
 
-        {/* 기술 스택 상세 */}
+        {/* 기술 스택 상세한정보들 수정가능 */}
         {project.techStack && (
           <section className="tech-stack-detail">
             <h2>기술 스택 상세</h2>
