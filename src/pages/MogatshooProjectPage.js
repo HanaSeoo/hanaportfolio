@@ -12,14 +12,14 @@ function MogatshooProjectPage() {
     period: '2025.05.12 - 2025.06.20',
     mainimage: '/image/mogatshoo.png',
     videoUrl: 'https://www.youtube.com/embed/JcuWNKhWlmo',
-    gitRepository: 'https://github.com/mogatshoo/Mogatshoo-Project',
+    gitRepository: 'https://github.com/HanaSeoo/mogatshoo',
     projectOverview: {
       projectName: '모갓슈? - 탈모인 익명 공감 커뮤니티',
       developmentPeriod: '2025.05.12 - 2025.06.20',
       developmentTeam: 3,
       projectType: '웹+앱 통합 커뮤니티 서비스 (익명 기반 탈모 진단 및 공감 플랫폼)',
       nameOrigin: '털(털모) + 갔슈? (가다의 전라도 사투리)',
-      gitRepository: 'https://github.com/mogatshoo/Mogatshoo-Project',
+      gitRepository: 'https://github.com/HanaSeoo/mogatshoo',
     },
     background: [
       '모갓슈(털털모 + 갔슈?_전라도 사투리)는 탈모인들을 위한 익명 기반 공감 커뮤니티 앱으로, AI 기반 이미지 분석을 통해 탈모 상태를 진단하고 맞춤형 정보를 제공하며, 유쾌한 위로와 소통이 가능한 웹+앱 통합 서비스입니다.',

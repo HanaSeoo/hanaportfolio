@@ -11,13 +11,13 @@ function ABCMallProjectPage() {
     period: '2025.03.3 - 2025.03.13',
     mainimage: '/image/projectimage/abcShopping/3-3.jpg',
     videoUrl: 'https://www.youtube.com/embed/AosiUaQ-lYo',
-    gitRepository: 'https://github.com/abc/ABC-ShoppingMall',
+    gitRepository: 'https://github.com/HanaSeoo/TeamPro1',
     projectOverview: {
       projectName: 'ABC ShoppingMall',
       developmentPeriod: '2025.03.3 - 2025.03.13',
       developmentTeam: 3,
       projectType: '의류 및 악세사리 판매 쇼핑몰',
-      gitRepository: 'https://github.com/abc/ABC-ShoppingMall',
+      gitRepository: 'https://github.com/HanaSeoo/TeamPro1',
     },
     background: [
       '온라인 쇼핑의 확산과 의류 시장의 다양화에 따라 사용자 맞춤형 쇼핑 경험을 제공하는 플랫폼의 필요성이 증가했습니다.',

@@ -12,13 +12,13 @@ function UrbanVillageProjectPage() {
     period: '2025.03.31 - 2022.05.25',
     mainimage: '/image/Urban&VillageLogo.png',
     videoUrl: 'https://www.youtube.com/embed/JMxSRmcZiU8?si=m63JhG7mEJt36m0v',
-    gitRepository: 'https://github.com/urban-village/Urban-Village',
+    gitRepository: 'https://github.com/HanaSeoo/urban-village',
     projectOverview: {
       projectName: 'Urban Village 숙박 플랫폼',
       developmentPeriod: '2025.03.31 - 2022.05.25',
       developmentTeam: 4,
       projectType: '숙박 플랫폼 (고객, 사업자/숙소, 관리자 파트 기능 분리)',
-      gitRepository: 'https://github.com/urban-village/Urban-Village',
+      gitRepository: 'https://github.com/HanaSeoo/urban-village',
     },
     background: [
       'Urban Village 서비스 운영을 위한 데이터베이스의 구조를 만드는 역할입니다.',
