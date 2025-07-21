@@ -10,7 +10,6 @@ import UrbanVillageProjectPage from './pages/UrbanVillageProjectPage';
 import PortfolioProjectPage from './pages/PortfolioProjectPage';
 import ABCMallProjectPage from './pages/ABCMallProjectPage';
 
-
 function App() {
    const [showScrollTop, setShowScrollTop] = useState(false);
 
