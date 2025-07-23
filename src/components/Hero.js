@@ -371,7 +371,7 @@ function Hero() {
         </div>
       </section>
 
-      {/* 모달 추가 */}
+      {/* 상장 모달 추가 */}
       {modalImage && (
         <div className="hero-modal-overlay" onClick={closeModal}>
           <div className="hero-modal-content" onClick={(e) => e.stopPropagation()}>
